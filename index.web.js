@@ -1,6 +1,6 @@
 import { AppRegistry, Touchable } from 'react-native';
 import Octicons from 'react-native-vector-icons/Fonts/Octicons.ttf';
-import Fontawesome from 'react-native-vector-icons/Fonts/Fontawesome.ttf';
+import Fontawesome from 'react-native-vector-icons/Fonts/FontAwesome.ttf';
 
 const style = document.createElement('style')
 style.type = 'text/css'
