@@ -1,0 +1,101 @@
+{
+    "name": "PaygatePOS",
+    "author": "8Sistemas",
+    "description": "PaygatePOS is a Electron/React Native (Web) frontend to the PaygatePOS.com",
+    "version": "0.0.1",
+    "private": true,
+    "main": "desktop/dist/main-prod.js",
+    "scripts": {
+        "start": "node node_modules/react-native/local-cli/cli.js start",
+        "test": "jest",
+        "android": "react-native run-android",
+        "ios": "react-native run-ios",
+        "desktop": "electron ./desktop/main.js",
+        "webpack-server": "webpack-serve --config webpack.config-renderer.js",
+        "pack": "electron-builder --dir",
+        "dist": "electron-builder",
+        "build-renderer": "cross-env NODE_ENV=production node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config-renderer.prod.js --colors",
+        "build-main": "cross-env NODE_ENV=production node --trace-warnings -r babel-register ./node_modules/webpack/bin/webpack --config webpack.config-main.prod.js --colors",
+        "build": "concurrently \"npm run build-main\" \"npm run build-renderer\"",
+        "package": "npm run build && build --publish never",
+        "package-all": "npm run build && build -mwl",
+        "package-linux": "npm run build && build --linux",
+        "package-win": "npm run build && build --win --x64"
+    },
+    "dependencies": {
+        "babel-regenerator-runtime": "^6.5.0",
+        "react": "16.3.1",
+        "react-art": "^16.4.1",
+        "react-dom": "16.3.1",
+        "react-native": "0.55.4",
+        "react-native-electron": "^0.7.0",
+        "react-native-elements": "1.0.0-beta5",
+        "react-native-vector-icons": "^4.6.0",
+        "react-native-web": "^0.8.3"
+    },
+    "devDependencies": {
+        "babel-eslint": "^8.2.3",
+        "babel-jest": "23.0.1",
+        "babel-loader": "^7.1.4",
+        "babel-preset-react-native": "4.0.0",
+        "concurrently": "^3.6.0",
+        "cross-env": "^5.2.0",
+        "electron": "^2.0.2",
+        "electron-builder": "^20.15.1",
+        "eslint": "^4.19.1",
+        "file-loader": "^1.1.11",
+        "jest": "23.1.0",
+        "react-test-renderer": "16.3.1",
+        "url-loader": "^1.0.1",
+        "webpack": "^4.12.0",
+        "webpack-cli": "^3.0.3",
+        "webpack-merge": "^4.1.3",
+        "webpack-serve": "^1.0.4"
+    },
+    "jest": {
+        "preset": "react-native"
+    },
+    "build": {
+        "productName": "PaygatePOS",
+        "appId": "com.paygatepos.electron",
+        "files": [
+            "desktop/dist/",
+            "node_modules/",
+            "desktop/index.html",
+            "package.json"
+        ],
+        "mac": {
+            "category": "public.app-category.business"
+        },
+        "dmg": {
+            "contents": [
+                {
+                    "x": 130,
+                    "y": 220
+                },
+                {
+                    "x": 410,
+                    "y": 220,
+                    "type": "link",
+                    "path": "/Applications"
+                }
+            ]
+        },
+        "win": {
+            "target": [
+                "nsis"
+            ]
+        },
+        "linux": {
+            "target": [
+                "deb",
+                "AppImage"
+            ],
+            "category": "Finance"
+        },
+        "directories": {
+            "buildResources": "resources",
+            "output": "release"
+        }
+    }
+}
