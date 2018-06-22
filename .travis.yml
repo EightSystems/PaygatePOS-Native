@@ -59,4 +59,4 @@ deploy:
           - "release/PaygatePOS-0.0.1-x86_64.AppImage"
       on:
           repo: EightSystems/PaygatePOS
-          condition: "$TRAVIS_OS_NAME = osx"
+          condition: "$TRAVIS_OS_NAME = linux"
