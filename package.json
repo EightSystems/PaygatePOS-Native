@@ -20,7 +20,8 @@
         "package": "npm run build && build --publish never",
         "package-all": "npm run build && build -mwl",
         "package-linux": "npm run build && build --linux",
-        "package-win": "npm run build && build --win --x64"
+        "package-win": "npm run build && build --win --x64",
+        "package-travis": "npm run build && build --win --x64 --linux"
     },
     "dependencies": {
         "babel-regenerator-runtime": "^6.5.0",
