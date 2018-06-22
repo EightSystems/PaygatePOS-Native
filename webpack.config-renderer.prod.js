@@ -13,6 +13,15 @@ module.exports = merge.smart(baseConfig, {
         publicPath: './dist/',
         filename: 'bundle-prod.js',
     },
+    plugins: [
+      new webpack.EnvironmentPlugin({
+          NODE_ENV: 'production',
+          HOT: false
+      }),
+      new webpack.DefinePlugin({
+        __DEV__: JSON.stringify(false),
+      }),
+    ],
     node: {
         __dirname: false,
         __filename: false

@@ -38,7 +38,8 @@ module.exports = {
   },
   plugins: [
     new webpack.EnvironmentPlugin({
-        NODE_ENV: 'production'
+        NODE_ENV: 'production',
+        HOT: true
     }),
     new webpack.DefinePlugin({
       __DEV__: JSON.stringify(true),
