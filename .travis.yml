@@ -1,18 +1,18 @@
 matrix:
     include:
         - os: osx
-            osx_image: xcode9.3
-            language: node_js
-            node_js: '9'
-            env:
-                - ELECTRON_CACHE=$HOME/.cache/electron
-                - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
-      - os: linux
-            language: node_js
-            node_js: '9'
-            env:
-                - ELECTRON_CACHE=$HOME/.cache/electron
-                - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+          osx_image: xcode9.3
+          language: node_js
+          node_js: '9'
+          env:
+            - ELECTRON_CACHE=$HOME/.cache/electron
+            - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
+        - os: linux
+          language: node_js
+          node_js: '9'
+          env:
+            - ELECTRON_CACHE=$HOME/.cache/electron
+            - ELECTRON_BUILDER_CACHE=$HOME/.cache/electron-builder
 cache:
       directories:
           - node_modules
@@ -52,11 +52,11 @@ deploy:
         repo: EightSystems/PaygatePOS
         condition: "$TRAVIS_OS_NAME = osx"
   - provider: releases
-      api_key:
-          secure: LVU/zpmW8kCwL8UBw5HO8bGYrsyi4AgamToOKCmUJLgzEfSfRgkHRKtNqn1FufX2obRGruPRt9I1s+IfwhzgCbOXaS9nvXDzO0X2w75DgHR8Xr03KgP7dlozFs73B7Hvv8FlIZrE+Qunn2UcrU2H3Z8C1ByoP69T3c9ZIP8g/gAb0MBhOt3bHDwRKH85G8D3ZW+2LDdghGHdxZ0Iqsg9uDvnPyiHVaHt6I7F8vqOm1DRo8sYy3mq5YRc1Fen/pfg44qkKvvgoSnQw29PFrqPpDHURcJeUrVHor/uozWe8nulWu1yFTJ58jo6RMsQPal2Af5qJfmkeNSOMyOPBlJi8wYpCDcklqKYQr+QEPh66StyXxpMw5e2Gcics166jHUYumJBpg3lXuZ5PNwhTG2fOQWAH40dNlZgD87yETq4ZrqRQlng/cKTa7Fqso/lIwuqlHLhpCVx0VyE7EsyCAcQYUvB7QDHKiAmzczI8Xe/w1NAPQmvMTjY4jvmV1vu1dYKab4FKyTWcWdK6eisbOgAybjpDxjie2AOnSWpQKwtKkwd2zPWBaB++cbWTvuiY/I/39Ew5xBobb7HKcfN2K1OI2liQ6xRW1O8EhLAsTb8vHG81oDbz/Wmastg5SeWSuOMG9wSbUIvJq4miEMsWCwbrRyw/DWwap/7Wxmk3cWCvhQ=
-      file:
-          - "release/PaygatePOS-0.0.1-x86_64.deb"
-          - "release/PaygatePOS-0.0.1-x86_64.AppImage"
-      on:
-          repo: EightSystems/PaygatePOS
-          condition: "$TRAVIS_OS_NAME = linux"
+    api_key:
+      secure: LVU/zpmW8kCwL8UBw5HO8bGYrsyi4AgamToOKCmUJLgzEfSfRgkHRKtNqn1FufX2obRGruPRt9I1s+IfwhzgCbOXaS9nvXDzO0X2w75DgHR8Xr03KgP7dlozFs73B7Hvv8FlIZrE+Qunn2UcrU2H3Z8C1ByoP69T3c9ZIP8g/gAb0MBhOt3bHDwRKH85G8D3ZW+2LDdghGHdxZ0Iqsg9uDvnPyiHVaHt6I7F8vqOm1DRo8sYy3mq5YRc1Fen/pfg44qkKvvgoSnQw29PFrqPpDHURcJeUrVHor/uozWe8nulWu1yFTJ58jo6RMsQPal2Af5qJfmkeNSOMyOPBlJi8wYpCDcklqKYQr+QEPh66StyXxpMw5e2Gcics166jHUYumJBpg3lXuZ5PNwhTG2fOQWAH40dNlZgD87yETq4ZrqRQlng/cKTa7Fqso/lIwuqlHLhpCVx0VyE7EsyCAcQYUvB7QDHKiAmzczI8Xe/w1NAPQmvMTjY4jvmV1vu1dYKab4FKyTWcWdK6eisbOgAybjpDxjie2AOnSWpQKwtKkwd2zPWBaB++cbWTvuiY/I/39Ew5xBobb7HKcfN2K1OI2liQ6xRW1O8EhLAsTb8vHG81oDbz/Wmastg5SeWSuOMG9wSbUIvJq4miEMsWCwbrRyw/DWwap/7Wxmk3cWCvhQ=
+    file:
+      - "release/PaygatePOS-0.0.1-x86_64.deb"
+      - "release/PaygatePOS-0.0.1-x86_64.AppImage"
+    on:
+      repo: EightSystems/PaygatePOS
+      condition: "$TRAVIS_OS_NAME = linux"
