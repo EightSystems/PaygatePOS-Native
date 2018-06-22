@@ -2,6 +2,8 @@
     "name": "PaygatePOS",
     "author": "8Sistemas",
     "description": "PaygatePOS is a Electron/React Native (Web) frontend to the PaygatePOS.com",
+    "homepage": "https://paygatepos.com",
+    "email": "vin@8sistemas.com",
     "version": "0.0.1",
     "private": true,
     "main": "desktop/dist/main-prod.js",
