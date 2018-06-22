@@ -27,7 +27,8 @@ const loginScreenStyle = StyleSheet.create({
     },
     formContainer: {
         marginTop: 20,
-        alignItems: 'center'
+        alignItems: 'center',
+        width: '100%'
     },
     loginButton: {
         marginTop: 20
