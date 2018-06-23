@@ -4,12 +4,12 @@ let mainWindow = null
 
 const createWindow = () => {
     mainWindow = new BrowserWindow({
-        minWidth: 300,
-        minHeight: 400,
-        width: 300,
-        height: 400,
+        minWidth: 440,
+        minHeight: 600,
+        width: 440,
+        height: 600,
         show: false,
-        resizable: true
+        resizable: false
     })
 
     mainWindow.on('closed', () => {
@@ -29,7 +29,6 @@ const createWindow = () => {
 
     mainWindow.once('ready-to-show', () => {
         mainWindow.show()
-        mainWindow.webContents.openDevTools()
     });
 
     if ( process.env.HOT ) {
