@@ -9,7 +9,7 @@ const createWindow = () => {
         width: 440,
         height: 600,
         show: false,
-        resizable: false
+        resizable: true
     })
 
     mainWindow.on('closed', () => {

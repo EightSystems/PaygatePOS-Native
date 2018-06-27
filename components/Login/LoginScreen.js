@@ -1,107 +1,55 @@
 import React, {Component} from 'react';
+import {View, ImageBackground, Image, Text, Platform, Dimensions, PixelRatio} from 'react-native';
 
-import {View, ImageBackground, Image, Text, StyleSheet, Platform, TouchableOpacity, TouchableNativeFeedback, Dimensions} from 'react-native';
 import { Input, Icon } from 'react-native-elements';
-
 import Carousel, { Pagination } from 'react-native-snap-carousel';
 import FlipCard from 'react-native-flip-card';
 
 import Button from '../GeneralUI/Button';
+import loginScreenStyle from './LoginStyle';
+import {loginSliderItems} from './';
 
-const loginScreenStyle = StyleSheet.create({
-    flipCardContainer: {
-        width: '100%',
-        height: '100%',
-        backgroundColor: 'transparent',
-        borderWidth: 0
-    },
-    mainView: {
-        flex: 1,
-        paddingTop: 20,
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        width: '100%',
-        height: '100%'
-    },
-    mainViewLogin: {
-        flex: 1,
-        paddingTop: 20,
-        alignItems: 'center',
-        width: '100%',
-        height: '100%'
-    },
-    mainImage: {
-
-    },
-    mainViewButtons: {
-        marginBottom: 40,
-        paddingLeft: 40,
-        paddingRight: 40,
-        width: '100%',
-    },
-    mainImageView: {
-        flex: 1,
-        position: 'absolute',
-        width: '100%',
-        height: '100%'
-    },
-    mainLogo: {
-        width: 100,
-        height: 40,
-        resizeMode: 'stretch',
-        marginBottom: 30
-    },
-    formContainer: {
-        backgroundColor: 'rgba(255, 255, 255, 1)',
-        borderRadius: 4,
-        marginTop: 40,
-        paddingTop:  20,
-        paddingRight: 10,
-        paddingLeft: 10,
-        paddingBottom: 20,
-        alignItems: 'center',
-        marginLeft: 5,
-        marginRight: 5
-    },
-    loginButtonContainer: {
-        marginTop: 20,
-        width: '100%'
-    },
-    loginButton: {
-        backgroundColor: 'white',
-        borderRadius: 20
-    },
-    signupButton: {
-        borderRadius: 20
-    },
-    loginButtonTitle: {
-        fontFamily: 'Lato-Regular',
-        color: 'black',
-        fontSize: 10
-    },
-    signupButtonTitle: {
-        color: 'white'
-    },
-    labelInput: {
-        fontFamily: 'Lato-Regular',
-        fontSize: 15,
-        color: 'black'
-    },
-    textHeadline: {
-        fontFamily: 'Lato-Bold',
-        fontSize: 15,
-        color: 'white',
-        textShadowColor: 'rgba(0, 0, 0, 0.75)',
-        textShadowOffset: {width: -1, height: 1},
-        textShadowRadius: 10,
-        textAlign: 'center'
-    },
-    loginFormButton: {
-        width: '100%'
-    }
-})
+const fontRatio = PixelRatio.getFontScale();
 
 class LoginForm extends Component {
+    constructor(props) {
+        super(props);
+
+        this.inputRefs = {}
+        this.state = {
+            company: '',
+            username: '',
+            password: '',
+            rpassword: ''
+        }
+    }
+
+    moveToNextInput = (id) => {
+        if ( id == "submit" ) {
+            if ( this.state.username.length > 0 && this.state.password.length > 0 ) {
+                if ( this.props.signup ) {
+                    if ( this.state.password == this.state.rpassword ) {
+                        alert("Send signup data");
+                    }
+                    else {
+                        alert("As senhas não coincidem");
+                    }
+                }
+                else {
+                    alert("Send login data");
+                }
+            }
+            else {
+                alert("Você precisa preencher o usuário e senha");
+            }
+        }
+        else {
+            if ( this.inputRefs[id] ) {
+                this.inputRefs[id].focus();
+            }
+        }
+    }
+
     render() {
         return (
             <View style={loginScreenStyle.mainViewLogin}>
@@ -109,21 +57,70 @@ class LoginForm extends Component {
                         position: 'absolute',
                         left: 10,
                         top: 25
-                    }} onPress={this.props.closePressed}/>
+                    }} onPress={this.props.closePressed} size={40 * fontRatio}/>
 
                 <Image source={require('./images/logo.png')} style={loginScreenStyle.mainLogo}/>
-                <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+                <View style={{width: "100%", justifyContent: 'center', alignItems: 'center'}}>
                     <View style={loginScreenStyle.formContainer}>
 
                         {this.props.signup ? (
-                            <Input inputContainerStyle={{width: '100%'}} placeholder="sua empresa..." rightIcon={{ type: 'font-awesome', name: 'building-o', color: 'gray' }} inputStyle={loginScreenStyle.labelInput} placeholderTextColor={'#525e72'}/>
+                            <Input ref={ref => this.inputRefs['company'] = ref}
+                                inputContainerStyle={{width: '100%'}} placeholder="sua empresa..."
+                                rightIcon={{ type: 'font-awesome', name: 'building-o', color: 'gray' }}
+                                inputStyle={loginScreenStyle.labelInput} placeholderTextColor={'#525e72'}
+                                returnKeyType={ "next" } blurOnSubmit={ false }
+                                onSubmitEditing={() => this.moveToNextInput('username')}
+                                autoFocus={true}
+                                onChangeText={(currentText) => {
+                                    this.setState({
+                                        company: currentText
+                                    })
+                                }}
+                            />
                         ) : null}
 
-                        <Input inputContainerStyle={{width: '100%'}} placeholder="e-mail..." rightIcon={{ type: 'font-awesome', name: 'user-o', color: 'gray' }} inputStyle={loginScreenStyle.labelInput} placeholderTextColor={'#525e72'}/>
-                        <Input inputContainerStyle={{width: '100%'}} placeholder="senha..." rightIcon={{ type: 'font-awesome', name: 'eye', color: 'gray' }} inputStyle={loginScreenStyle.labelInput} secureTextEntry={true} placeholderTextColor={'#525e72'}/>
+                        <Input ref={ref => this.inputRefs['username'] = ref}
+                            inputContainerStyle={{width: '100%'}} placeholder="e-mail..."
+                            rightIcon={{ type: 'font-awesome', name: 'user-o', color: 'gray' }}
+                            inputStyle={loginScreenStyle.labelInput} placeholderTextColor={'#525e72'}
+                            returnKeyType={ "next" } blurOnSubmit={ false }
+                            onSubmitEditing={() => this.moveToNextInput('password')}
+                            keyboardType={"email-address"} autoFocus={this.props.signup ? false : true}
+                            onChangeText={(currentText) => {
+                                this.setState({
+                                    username: currentText
+                                })
+                            }}
+                        />
+
+                        <Input ref={ref => this.inputRefs['password'] = ref}
+                            inputContainerStyle={{width: '100%'}} placeholder="senha..."
+                            rightIcon={{ type: 'font-awesome', name: 'eye', color: 'gray' }}
+                            inputStyle={loginScreenStyle.labelInput} secureTextEntry={true}
+                            placeholderTextColor={'#525e72'} returnKeyType={ this.props.signup ? "next" : "done" }
+                            blurOnSubmit={ this.props.signup ? false : true }
+                            onSubmitEditing={() => this.moveToNextInput(this.props.signup ? 'rpassword' : 'submit')}
+                            onChangeText={(currentText) => {
+                                this.setState({
+                                    password: currentText
+                                })
+                            }}
+                        />
 
                         {this.props.signup ? (
-                            <Input inputContainerStyle={{width: '100%'}} placeholder="confirmar senha..." rightIcon={{ type: 'font-awesome', name: 'eye', color: 'gray' }} inputStyle={loginScreenStyle.labelInput} secureTextEntry={true} placeholderTextColor={'#525e72'}/>
+                            <Input ref={ref => this.inputRefs['rpassword'] = ref}
+                                inputContainerStyle={{width: '100%'}} placeholder="confirmar senha..."
+                                rightIcon={{ type: 'font-awesome', name: 'eye', color: 'gray' }}
+                                inputStyle={loginScreenStyle.labelInput} secureTextEntry={true}
+                                placeholderTextColor={'#525e72'} returnKeyType={ "done" }
+                                blurOnSubmit={ true }
+                                onSubmitEditing={() => this.moveToNextInput('submit')}
+                                onChangeText={(currentText) => {
+                                    this.setState({
+                                        rpassword: currentText
+                                    })
+                                }}
+                            />
                         ) : null}
 
                         <Button
@@ -135,8 +132,9 @@ class LoginForm extends Component {
                                 [loginScreenStyle.loginButtonTitle, loginScreenStyle.signupButtonTitle, loginScreenStyle.loginFormButton]
                             }
                             title={
-                                this.props.signup ? "INCREVA-SE" : "ENTRAR"
+                                this.props.signup ? "INSCREVA-SE" : "ENTRAR"
                             }
+                            onPress={() => this.moveToNextInput('submit')}
                         />
                     </View>
                 </View>
@@ -155,16 +153,6 @@ export default class LoginScreen extends Component {
             activeSlide: 0,
             carouselRef: null
         }
-
-        this.loginSliderItems = [
-            "Sistema de gestão e caixa para você, e sua empresa",
-            "Controle para micro, e pequenas empresas. Lojas, Restaurantes, Bares, Hoteis, Pousadas",
-            "Nas nuvens, mas com pouso local",
-            "Módulos que encaixam com você!",
-            "Sistema adaptável",
-            "Suporte ouro!",
-            "Registre-se agora, e receba uma semana gratuita!"
-        ];
     }
 
     render() {
@@ -172,7 +160,7 @@ export default class LoginScreen extends Component {
         return (
             <ImageBackground style={loginScreenStyle.mainImageView} imageStyle={loginScreenStyle.mainImage} source={require('./images/background.jpg')} blurRadius={2}>
                 <FlipCard
-                        flipHorizontal={true} perspective={1000} friction={6}
+                        flipHorizontal={true} perspective={1000} friction={1000}
                         flipVertical={false} flip={this.state.flip} clickable={false}
                         style={loginScreenStyle.flipCardContainer}
                 >
@@ -189,7 +177,7 @@ export default class LoginScreen extends Component {
                                 }}
                                 sliderWidth={width-60} itemWidth={width-60} vertical={false} loop={false} autoplay={true}
                                 containerCustomStyle={Platform.OS == "web" ? {overflowX: 'hidden', marginBottom: 40} : {marginBottom: 40}}
-                                data={this.loginSliderItems}
+                                data={loginSliderItems}
                                 renderItem={(item, index) => {
                                     return (
                                         <View>
@@ -201,7 +189,7 @@ export default class LoginScreen extends Component {
                             />
 
                             <Pagination
-                                dotsLength={this.loginSliderItems.length}
+                                dotsLength={loginSliderItems.length}
                                 activeDotIndex={this.state.activeSlide}
                                 containerStyle={{ backgroundColor: 'transparent'}}
                                 tappableDots={this.state.carouselRef ? true : false}
