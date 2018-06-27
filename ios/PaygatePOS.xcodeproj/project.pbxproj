@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -12,7 +13,9 @@
 		00C302E91ABCBA2D00DB3ED1 /* libRCTNetwork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302DC1ABCB9D200DB3ED1 /* libRCTNetwork.a */; };
 		00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302E41ABCB9EE00DB3ED1 /* libRCTVibration.a */; };
 		00E356F31AD99517003FC87E /* PaygatePOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PaygatePOSTests.m */; };
+		0AD38121AE8F4AD8B794773E /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC0D8FEA045A4A8DAB5EAAC3 /* Lato-ThinItalic.ttf */; };
 		0F6A3559C5BF4598981A9125 /* libAppCenterReactNativeCrashes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D2312CE7DB844B378AB6036B /* libAppCenterReactNativeCrashes.a */; };
+		10142A10E2394E54B338D11F /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B2C4D47E446DC8F26FF78 /* Lato-Italic.ttf */; };
 		133E29F31AD74F7200F7D852 /* libRCTLinking.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C398B91ACF4ADC00677621 /* libRCTLinking.a */; };
 		139105C61AF99C1200B5F7CC /* libRCTSettings.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139105C11AF99BAD00B5F7CC /* libRCTSettings.a */; };
 		139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 139FDEF41B06529B00C62182 /* libRCTWebSocket.a */; };
@@ -22,7 +25,10 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
 		146834051AC3E58100842450 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 146834041AC3E56700842450 /* libReact.a */; };
+		1945D4FCF2564CA4A2830AAB /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4C3060A4B7444F88CA5930 /* Lato-BoldItalic.ttf */; };
 		1BFA1F2AC7D5447AB24D8932 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B37794688D8E4A2FB646F785 /* SimpleLineIcons.ttf */; };
+		1ED9555814934FFBA6E055D9 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D7AE760A9DA41F69E18FF4C /* Lato-LightItalic.ttf */; };
+		24CB0766987045678C5703A4 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 756483859DF84464A7E6BA1D /* Lato-Regular.ttf */; };
 		27E276BB91154E5596B50925 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47C6B449A76D432DA83A6E6A /* MaterialIcons.ttf */; };
 		2CA9FCED96F449D296650B93 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA041F26C4D47B83F1E13 /* EvilIcons.ttf */; };
 		2D02E4BC1E0B4A80006451C7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
@@ -38,6 +44,9 @@
 		2D16E6881FA4F8E400B85C8A /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2D16E6891FA4F8E400B85C8A /* libReact.a */; };
 		2DCD954D1E0B4F2C00145EB5 /* PaygatePOSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* PaygatePOSTests.m */; };
 		2DF0FFEE2056DD460020B375 /* libReact.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3DAD3EA31DF850E9000B6D8A /* libReact.a */; };
+		345E4964C6104412AF5F2CF0 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55B494CEC1134D67B46C17C6 /* Lato-HairlineItalic.ttf */; };
+		361CF31A349B4917A89D0358 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C876E4FD836747FB8C77D5E3 /* Lato-Semibold.ttf */; };
+		373B26EAF5F047F5A7C19525 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0798D5D4C48B4A04BDA7EBB5 /* Lato-BlackItalic.ttf */; };
 		3B6EE33D67494C6A9495E574 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E66EBF56894C7E8AFA5C34 /* libRNVectorIcons.a */; };
 		40E3D2B36EDDE3EE9D922896 /* libPods-PaygatePOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0F31CF826B38C994D08E0D /* libPods-PaygatePOS.a */; };
 		41AB1EC5832B488881C95385 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06B501BA894D4659AE928690 /* Octicons.ttf */; };
@@ -45,37 +54,29 @@
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
 		7ACE11F6EF1057B13CEDDB19 /* libPods-PaygatePOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DD38E1F5AC876DE1E3874F /* libPods-PaygatePOSTests.a */; };
 		805008DBB4FB4D52A36233BF /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E61AEE7F1C1743548434C6F8 /* Foundation.ttf */; };
+		80E977F7C01643D3A8831945 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F61EE20284B47A0A44670 /* Lato-Hairline.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
+		8AA872E7F24C4B48851BEDAA /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE1CE7CA9D9441AA92E3115C /* Lato-Thin.ttf */; };
 		8C0BEF53515B4ACDA829B082 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 302431F6AF79468D973F0BE1 /* libAppCenterReactNative.a */; };
 		A5FD475702604521809203F9 /* libPods-PaygatePOS-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 976BAFFC9443289AE52B2F24 /* libPods-PaygatePOS-tvOSTests.a */; };
 		A945CF71DFBC498C9043AF51 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C372A63E3F4E73B55090C8 /* Feather.ttf */; };
+		ACD143DAAC7B4C64AA408FCC /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0854C09619A44275BB62A372 /* Lato-Medium.ttf */; };
 		ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */; };
 		B9A84796E09D52F860BC3A11 /* libPods-PaygatePOS-tvOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A9E6F7F637F0A83900FA0379 /* libPods-PaygatePOS-tvOS.a */; };
 		BA8E28289A834D8DAA7D349B /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 783A1ED4F9EA434C8E21A2D6 /* Zocial.ttf */; };
+		BCEBFF23076B417D9DDE8B1A /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF889F7489B14E36AFAB3754 /* Lato-Heavy.ttf */; };
 		BF03B09FD2A54E82B92F397E /* Ionicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8151230E15B94F70A3BFD677 /* Ionicons.ttf */; };
+		BFA58D30FC0C46C3B0ED199F /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FFFF70AE9A74AE7A6871ADB /* Lato-SemiboldItalic.ttf */; };
+		C1712EE120BA4023BC4AB403 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8120CB4B7624419791F2700B /* Lato-Light.ttf */; };
 		C9F3277386BE4B7AAFDC9989 /* Entypo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 047630FCCBBF4413B6BEFD5C /* Entypo.ttf */; };
 		CB0D8B37CC614EBD86A10ED4 /* FontAwesome.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C730E9F4A6B64D9DA5B8C4D3 /* FontAwesome.ttf */; };
 		D6C4E2C323D7456FA2033535 /* MaterialCommunityIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6B220825309D4A4FA6F01C25 /* MaterialCommunityIcons.ttf */; };
 		D923B19BC77247A9A3CED69D /* libAppCenterReactNativeAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20CE225CD3A44D2C9A625DCC /* libAppCenterReactNativeAnalytics.a */; };
-		E807A301FC2A45D5B214460B /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC149227919343AD923AD512 /* AppCenter-Config.plist */; };
-		E78275B39ED6489983947547 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B28C778F2AC9403682E72D30 /* Lato-Black.ttf */; };
-		373B26EAF5F047F5A7C19525 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0798D5D4C48B4A04BDA7EBB5 /* Lato-BlackItalic.ttf */; };
-		F99003F76CAB453BBA7D030C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F111CE969F54AB4B5196840 /* Lato-Bold.ttf */; };
-		1945D4FCF2564CA4A2830AAB /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4C3060A4B7444F88CA5930 /* Lato-BoldItalic.ttf */; };
-		80E977F7C01643D3A8831945 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F61EE20284B47A0A44670 /* Lato-Hairline.ttf */; };
-		345E4964C6104412AF5F2CF0 /* Lato-HairlineItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 55B494CEC1134D67B46C17C6 /* Lato-HairlineItalic.ttf */; };
-		BCEBFF23076B417D9DDE8B1A /* Lato-Heavy.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF889F7489B14E36AFAB3754 /* Lato-Heavy.ttf */; };
-		E1AAD6BC3AFE4ADA82866765 /* Lato-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DE99FEC34C94D5A97EE1ADA /* Lato-HeavyItalic.ttf */; };
-		10142A10E2394E54B338D11F /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B2C4D47E446DC8F26FF78 /* Lato-Italic.ttf */; };
-		C1712EE120BA4023BC4AB403 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8120CB4B7624419791F2700B /* Lato-Light.ttf */; };
-		1ED9555814934FFBA6E055D9 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D7AE760A9DA41F69E18FF4C /* Lato-LightItalic.ttf */; };
-		ACD143DAAC7B4C64AA408FCC /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0854C09619A44275BB62A372 /* Lato-Medium.ttf */; };
 		DE883BFC8E67432BB18F9749 /* Lato-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EEE3768D0F604712909847D1 /* Lato-MediumItalic.ttf */; };
-		24CB0766987045678C5703A4 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 756483859DF84464A7E6BA1D /* Lato-Regular.ttf */; };
-		361CF31A349B4917A89D0358 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C876E4FD836747FB8C77D5E3 /* Lato-Semibold.ttf */; };
-		BFA58D30FC0C46C3B0ED199F /* Lato-SemiboldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5FFFF70AE9A74AE7A6871ADB /* Lato-SemiboldItalic.ttf */; };
-		8AA872E7F24C4B48851BEDAA /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE1CE7CA9D9441AA92E3115C /* Lato-Thin.ttf */; };
-		0AD38121AE8F4AD8B794773E /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CC0D8FEA045A4A8DAB5EAAC3 /* Lato-ThinItalic.ttf */; };
+		E1AAD6BC3AFE4ADA82866765 /* Lato-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5DE99FEC34C94D5A97EE1ADA /* Lato-HeavyItalic.ttf */; };
+		E78275B39ED6489983947547 /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B28C778F2AC9403682E72D30 /* Lato-Black.ttf */; };
+		E807A301FC2A45D5B214460B /* AppCenter-Config.plist in Resources */ = {isa = PBXBuildFile; fileRef = DC149227919343AD923AD512 /* AppCenter-Config.plist */; };
+		F99003F76CAB453BBA7D030C /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F111CE969F54AB4B5196840 /* Lato-Bold.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -141,6 +142,48 @@
 			proxyType = 2;
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
+		};
+		205D951A20E3228F00E059A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 62F85EFEE71B4F1ABE134014 /* AppCenterReactNative.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = C35AEC211EF91F9300931F0C;
+			remoteInfo = AppCenterReactNative;
+		};
+		205D951D20E3228F00E059A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 852FF4548ACA45818ADDB814 /* AppCenterReactNativeAnalytics.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 548694001D8384E600E6685A;
+			remoteInfo = AppCenterReactNativeAnalytics;
+		};
+		205D952020E3228F00E059A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BF1189F657F14D43905D73AD /* AppCenterReactNativeCrashes.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5419C2701D824AA700DDF3A1;
+			remoteInfo = AppCenterReactNativeCrashes;
+		};
+		205D952420E3228F00E059A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 625C2E370A484591A1E20139 /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = BVLinearGradient;
+		};
+		205D952620E3228F00E059A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 625C2E370A484591A1E20139 /* BVLinearGradient.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 64AA15081EF7F30100718508;
+			remoteInfo = "BVLinearGradient-tvOS";
+		};
+		205D952920E3228F00E059A3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A6E8DA72635475B81639ED3 /* RNVectorIcons.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
+			remoteInfo = RNVectorIcons;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -365,9 +408,11 @@
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* PaygatePOSTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PaygatePOSTests.m; sourceTree = "<group>"; };
 		01C305EBB2435A04CD4779F0 /* Pods-PaygatePOS-tvOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS-tvOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS-tvOS/Pods-PaygatePOS-tvOS.release.xcconfig"; sourceTree = "<group>"; };
-		047630FCCBBF4413B6BEFD5C /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
-		06B501BA894D4659AE928690 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
-		0A6E8DA72635475B81639ED3 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
+		047630FCCBBF4413B6BEFD5C /* Entypo.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Entypo.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Entypo.ttf"; sourceTree = "<group>"; };
+		06B501BA894D4659AE928690 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
+		0798D5D4C48B4A04BDA7EBB5 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BlackItalic.ttf"; path = "../assets/fonts/Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		0854C09619A44275BB62A372 /* Lato-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Medium.ttf"; path = "../assets/fonts/Lato-Medium.ttf"; sourceTree = "<group>"; };
+		0A6E8DA72635475B81639ED3 /* RNVectorIcons.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RNVectorIcons.xcodeproj; path = "../node_modules/react-native-vector-icons/RNVectorIcons.xcodeproj"; sourceTree = "<group>"; };
 		139105B61AF99BAD00B5F7CC /* RCTSettings.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTSettings.xcodeproj; path = "../node_modules/react-native/Libraries/Settings/RCTSettings.xcodeproj"; sourceTree = "<group>"; };
 		139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTWebSocket.xcodeproj; path = "../node_modules/react-native/Libraries/WebSocket/RCTWebSocket.xcodeproj"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* PaygatePOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PaygatePOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -379,60 +424,58 @@
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PaygatePOS/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1BEB6061415F0F378830595B /* Pods-PaygatePOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOSTests/Pods-PaygatePOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		1F8EA041F26C4D47B83F1E13 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
-		20CE225CD3A44D2C9A625DCC /* libAppCenterReactNativeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libAppCenterReactNativeAnalytics.a; path = libAppCenterReactNativeAnalytics.a; sourceTree = "<group>"; };
-		26C372A63E3F4E73B55090C8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		1F8EA041F26C4D47B83F1E13 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		20CE225CD3A44D2C9A625DCC /* libAppCenterReactNativeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeAnalytics.a; sourceTree = "<group>"; };
+		26C372A63E3F4E73B55090C8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
+		2B9F61EE20284B47A0A44670 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Hairline.ttf"; path = "../assets/fonts/Lato-Hairline.ttf"; sourceTree = "<group>"; };
 		2C2AE963B4069418A40D5ED1 /* Pods-PaygatePOS-tvOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS-tvOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS-tvOSTests/Pods-PaygatePOS-tvOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		2D02E47B1E0B4A5D006451C7 /* PaygatePOS-tvOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "PaygatePOS-tvOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D02E4901E0B4A5D006451C7 /* PaygatePOS-tvOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "PaygatePOS-tvOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D16E6891FA4F8E400B85C8A /* libReact.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libReact.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		302431F6AF79468D973F0BE1 /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libAppCenterReactNative.a; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
+		302431F6AF79468D973F0BE1 /* libAppCenterReactNative.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNative.a; sourceTree = "<group>"; };
 		351E81F747F909658220D2B0 /* Pods-PaygatePOS-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS-tvOS/Pods-PaygatePOS-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
-		4108D76211FF4446B55926FB /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libBVLinearGradient.a; path = libBVLinearGradient.a; sourceTree = "<group>"; };
-		47C6B449A76D432DA83A6E6A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
+		4108D76211FF4446B55926FB /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
+		47C6B449A76D432DA83A6E6A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
 		4BCD394DE5DCEDD34962A240 /* Pods-PaygatePOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOSTests/Pods-PaygatePOSTests.debug.xcconfig"; sourceTree = "<group>"; };
+		55B494CEC1134D67B46C17C6 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-HairlineItalic.ttf"; path = "../assets/fonts/Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
+		5D7AE760A9DA41F69E18FF4C /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-LightItalic.ttf"; path = "../assets/fonts/Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		5DE99FEC34C94D5A97EE1ADA /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-HeavyItalic.ttf"; path = "../assets/fonts/Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
 		5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTAnimation.xcodeproj; path = "../node_modules/react-native/Libraries/NativeAnimation/RCTAnimation.xcodeproj"; sourceTree = "<group>"; };
-		625C2E370A484591A1E20139 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
-		62F85EFEE71B4F1ABE134014 /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
-		6B220825309D4A4FA6F01C25 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
-		783A1ED4F9EA434C8E21A2D6 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
+		5FFFF70AE9A74AE7A6871ADB /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-SemiboldItalic.ttf"; path = "../assets/fonts/Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; };
+		625C2E370A484591A1E20139 /* BVLinearGradient.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = BVLinearGradient.xcodeproj; path = "../node_modules/react-native-linear-gradient/BVLinearGradient.xcodeproj"; sourceTree = "<group>"; };
+		62F85EFEE71B4F1ABE134014 /* AppCenterReactNative.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNative.xcodeproj; path = ../node_modules/appcenter/ios/AppCenterReactNative.xcodeproj; sourceTree = "<group>"; };
+		6B220825309D4A4FA6F01C25 /* MaterialCommunityIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialCommunityIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialCommunityIcons.ttf"; sourceTree = "<group>"; };
+		756483859DF84464A7E6BA1D /* Lato-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Regular.ttf"; path = "../assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		783A1ED4F9EA434C8E21A2D6 /* Zocial.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Zocial.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; };
 		78C398B01ACF4ADC00677621 /* RCTLinking.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTLinking.xcodeproj; path = "../node_modules/react-native/Libraries/LinkingIOS/RCTLinking.xcodeproj"; sourceTree = "<group>"; };
-		8151230E15B94F70A3BFD677 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		8120CB4B7624419791F2700B /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
+		8151230E15B94F70A3BFD677 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
-		852FF4548ACA45818ADDB814 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
+		852FF4548ACA45818ADDB814 /* AppCenterReactNativeAnalytics.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeAnalytics.xcodeproj; path = "../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics.xcodeproj"; sourceTree = "<group>"; };
+		8D5B2C4D47E446DC8F26FF78 /* Lato-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Italic.ttf"; path = "../assets/fonts/Lato-Italic.ttf"; sourceTree = "<group>"; };
+		8F111CE969F54AB4B5196840 /* Lato-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Bold.ttf"; path = "../assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
 		976BAFFC9443289AE52B2F24 /* libPods-PaygatePOS-tvOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaygatePOS-tvOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9E6F7F637F0A83900FA0379 /* libPods-PaygatePOS-tvOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaygatePOS-tvOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTBlob.xcodeproj; path = "../node_modules/react-native/Libraries/Blob/RCTBlob.xcodeproj"; sourceTree = "<group>"; };
-		B37794688D8E4A2FB646F785 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
-		BF1189F657F14D43905D73AD /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
+		AE1CE7CA9D9441AA92E3115C /* Lato-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Thin.ttf"; path = "../assets/fonts/Lato-Thin.ttf"; sourceTree = "<group>"; };
+		AF889F7489B14E36AFAB3754 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Heavy.ttf"; path = "../assets/fonts/Lato-Heavy.ttf"; sourceTree = "<group>"; };
+		B28C778F2AC9403682E72D30 /* Lato-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Black.ttf"; path = "../assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; };
+		B37794688D8E4A2FB646F785 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
+		BF1189F657F14D43905D73AD /* AppCenterReactNativeCrashes.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = AppCenterReactNativeCrashes.xcodeproj; path = "../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes.xcodeproj"; sourceTree = "<group>"; };
 		C3DD38E1F5AC876DE1E3874F /* libPods-PaygatePOSTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaygatePOSTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C730E9F4A6B64D9DA5B8C4D3 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
-		D2312CE7DB844B378AB6036B /* libAppCenterReactNativeCrashes.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libAppCenterReactNativeCrashes.a; path = libAppCenterReactNativeCrashes.a; sourceTree = "<group>"; };
+		C730E9F4A6B64D9DA5B8C4D3 /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
+		C876E4FD836747FB8C77D5E3 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Semibold.ttf"; path = "../assets/fonts/Lato-Semibold.ttf"; sourceTree = "<group>"; };
+		CB4C3060A4B7444F88CA5930 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BoldItalic.ttf"; path = "../assets/fonts/Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		CC0D8FEA045A4A8DAB5EAAC3 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-ThinItalic.ttf"; path = "../assets/fonts/Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		D2312CE7DB844B378AB6036B /* libAppCenterReactNativeCrashes.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeCrashes.a; sourceTree = "<group>"; };
 		DC149227919343AD923AD512 /* AppCenter-Config.plist */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 4; includeInIndex = 0; lastKnownFileType = text.plist.xml; name = "AppCenter-Config.plist"; path = "PaygatePOS/AppCenter-Config.plist"; sourceTree = "<group>"; };
 		DE0F31CF826B38C994D08E0D /* libPods-PaygatePOS.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PaygatePOS.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E61AEE7F1C1743548434C6F8 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
-		E9E66EBF56894C7E8AFA5C34 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = undefined; includeInIndex = 0; lastKnownFileType = archive.ar; name = libRNVectorIcons.a; path = libRNVectorIcons.a; sourceTree = "<group>"; };
+		E61AEE7F1C1743548434C6F8 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
+		E9E66EBF56894C7E8AFA5C34 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
 		EDE0389D77A81EC5E5A19E9E /* Pods-PaygatePOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS/Pods-PaygatePOS.release.xcconfig"; sourceTree = "<group>"; };
 		EE37DB2F9589FB75D9F54437 /* Pods-PaygatePOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS/Pods-PaygatePOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EEE3768D0F604712909847D1 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-MediumItalic.ttf"; path = "../assets/fonts/Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
 		F925DB6B4DBBB65BDB9D70AF /* Pods-PaygatePOS-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS-tvOSTests/Pods-PaygatePOS-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
-		B28C778F2AC9403682E72D30 /* Lato-Black.ttf */ = {isa = PBXFileReference; name = "Lato-Black.ttf"; path = "../assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0798D5D4C48B4A04BDA7EBB5 /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; name = "Lato-BlackItalic.ttf"; path = "../assets/fonts/Lato-BlackItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8F111CE969F54AB4B5196840 /* Lato-Bold.ttf */ = {isa = PBXFileReference; name = "Lato-Bold.ttf"; path = "../assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CB4C3060A4B7444F88CA5930 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; name = "Lato-BoldItalic.ttf"; path = "../assets/fonts/Lato-BoldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		2B9F61EE20284B47A0A44670 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; name = "Lato-Hairline.ttf"; path = "../assets/fonts/Lato-Hairline.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		55B494CEC1134D67B46C17C6 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; name = "Lato-HairlineItalic.ttf"; path = "../assets/fonts/Lato-HairlineItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AF889F7489B14E36AFAB3754 /* Lato-Heavy.ttf */ = {isa = PBXFileReference; name = "Lato-Heavy.ttf"; path = "../assets/fonts/Lato-Heavy.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5DE99FEC34C94D5A97EE1ADA /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; name = "Lato-HeavyItalic.ttf"; path = "../assets/fonts/Lato-HeavyItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8D5B2C4D47E446DC8F26FF78 /* Lato-Italic.ttf */ = {isa = PBXFileReference; name = "Lato-Italic.ttf"; path = "../assets/fonts/Lato-Italic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		8120CB4B7624419791F2700B /* Lato-Light.ttf */ = {isa = PBXFileReference; name = "Lato-Light.ttf"; path = "../assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5D7AE760A9DA41F69E18FF4C /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; name = "Lato-LightItalic.ttf"; path = "../assets/fonts/Lato-LightItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		0854C09619A44275BB62A372 /* Lato-Medium.ttf */ = {isa = PBXFileReference; name = "Lato-Medium.ttf"; path = "../assets/fonts/Lato-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		EEE3768D0F604712909847D1 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; name = "Lato-MediumItalic.ttf"; path = "../assets/fonts/Lato-MediumItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		756483859DF84464A7E6BA1D /* Lato-Regular.ttf */ = {isa = PBXFileReference; name = "Lato-Regular.ttf"; path = "../assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		C876E4FD836747FB8C77D5E3 /* Lato-Semibold.ttf */ = {isa = PBXFileReference; name = "Lato-Semibold.ttf"; path = "../assets/fonts/Lato-Semibold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		5FFFF70AE9A74AE7A6871ADB /* Lato-SemiboldItalic.ttf */ = {isa = PBXFileReference; name = "Lato-SemiboldItalic.ttf"; path = "../assets/fonts/Lato-SemiboldItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		AE1CE7CA9D9441AA92E3115C /* Lato-Thin.ttf */ = {isa = PBXFileReference; name = "Lato-Thin.ttf"; path = "../assets/fonts/Lato-Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		CC0D8FEA045A4A8DAB5EAAC3 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; name = "Lato-ThinItalic.ttf"; path = "../assets/fonts/Lato-ThinItalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -615,6 +658,59 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		205D94E920E3228C00E059A3 /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				4108D76211FF4446B55926FB /* libBVLinearGradient.a */,
+				E9E66EBF56894C7E8AFA5C34 /* libRNVectorIcons.a */,
+				302431F6AF79468D973F0BE1 /* libAppCenterReactNative.a */,
+				20CE225CD3A44D2C9A625DCC /* libAppCenterReactNativeAnalytics.a */,
+				D2312CE7DB844B378AB6036B /* libAppCenterReactNativeCrashes.a */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		205D950F20E3228E00E059A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				205D952520E3228F00E059A3 /* libBVLinearGradient.a */,
+				205D952720E3228F00E059A3 /* libBVLinearGradient.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		205D951120E3228E00E059A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				205D952A20E3228F00E059A3 /* libRNVectorIcons.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		205D951320E3228E00E059A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				205D951B20E3228F00E059A3 /* libAppCenterReactNative.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		205D951520E3228E00E059A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				205D951E20E3228F00E059A3 /* libAppCenterReactNativeAnalytics.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		205D951720E3228E00E059A3 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				205D952120E3228F00E059A3 /* libAppCenterReactNativeCrashes.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -689,6 +785,7 @@
 				C3B1E66A2BA24C27BCC79137 /* Resources */,
 				DC149227919343AD923AD512 /* AppCenter-Config.plist */,
 				FB5CA00CC5455357C395CC47 /* Pods */,
+				205D94E920E3228C00E059A3 /* Recovered References */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -749,7 +846,6 @@
 				CC0D8FEA045A4A8DAB5EAAC3 /* Lato-ThinItalic.ttf */,
 			);
 			name = Resources;
-			path = "";
 			sourceTree = "<group>";
 		};
 		FB5CA00CC5455357C395CC47 /* Pods */ = {
@@ -891,6 +987,22 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
+					ProductGroup = 205D951320E3228E00E059A3 /* Products */;
+					ProjectRef = 62F85EFEE71B4F1ABE134014 /* AppCenterReactNative.xcodeproj */;
+				},
+				{
+					ProductGroup = 205D951520E3228E00E059A3 /* Products */;
+					ProjectRef = 852FF4548ACA45818ADDB814 /* AppCenterReactNativeAnalytics.xcodeproj */;
+				},
+				{
+					ProductGroup = 205D951720E3228E00E059A3 /* Products */;
+					ProjectRef = BF1189F657F14D43905D73AD /* AppCenterReactNativeCrashes.xcodeproj */;
+				},
+				{
+					ProductGroup = 205D950F20E3228E00E059A3 /* Products */;
+					ProjectRef = 625C2E370A484591A1E20139 /* BVLinearGradient.xcodeproj */;
+				},
+				{
 					ProductGroup = 00C302A81ABCB8CE00DB3ED1 /* Products */;
 					ProjectRef = 00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */;
 				},
@@ -937,6 +1049,10 @@
 				{
 					ProductGroup = 146834001AC3E56700842450 /* Products */;
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
+				},
+				{
+					ProductGroup = 205D951120E3228E00E059A3 /* Products */;
+					ProjectRef = 0A6E8DA72635475B81639ED3 /* RNVectorIcons.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1004,6 +1120,48 @@
 			fileType = archive.ar;
 			path = libReact.a;
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		205D951B20E3228F00E059A3 /* libAppCenterReactNative.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppCenterReactNative.a;
+			remoteRef = 205D951A20E3228F00E059A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		205D951E20E3228F00E059A3 /* libAppCenterReactNativeAnalytics.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppCenterReactNativeAnalytics.a;
+			remoteRef = 205D951D20E3228F00E059A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		205D952120E3228F00E059A3 /* libAppCenterReactNativeCrashes.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libAppCenterReactNativeCrashes.a;
+			remoteRef = 205D952020E3228F00E059A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		205D952520E3228F00E059A3 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = 205D952420E3228F00E059A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		205D952720E3228F00E059A3 /* libBVLinearGradient.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libBVLinearGradient.a;
+			remoteRef = 205D952620E3228F00E059A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		205D952A20E3228F00E059A3 /* libRNVectorIcons.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNVectorIcons.a;
+			remoteRef = 205D952920E3228F00E059A3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */ = {
@@ -1655,6 +1813,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = PaygatePOS;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1681,6 +1840,7 @@
 					"-lc++",
 				);
 				PRODUCT_NAME = PaygatePOS;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

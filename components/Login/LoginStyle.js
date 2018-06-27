@@ -48,7 +48,13 @@ export default StyleSheet.create(
             width: 250 * pixelDensity,
             height: 100 * pixelDensity,
             resizeMode: 'stretch',
-            marginBottom: 30
+            marginBottom: 30,
+            ...Platform.select({
+                ios: {
+                    width: 250,
+                    height: 100
+                }
+            })
         },
         formContainer: {
             backgroundColor: 'rgba(255, 255, 255, 1)',
@@ -76,16 +82,31 @@ export default StyleSheet.create(
         loginButton: {
             backgroundColor: 'white',
             borderRadius: 20,
-            height: 60 * pixelDensity
+            height: 60 * pixelDensity,
+            ...Platform.select({
+                ios: {
+                    height: 60
+                }
+            })
         },
         signupButton: {
             borderRadius: 20,
-            height: 60 * pixelDensity
+            height: 60 * pixelDensity,
+            ...Platform.select({
+                ios: {
+                    height: 60
+                }
+            })
         },
         loginButtonTitle: {
             fontFamily: 'Lato-Regular',
             color: 'black',
-            fontSize: 20 * fontRatio
+            fontSize: 20 * fontRatio,
+            ...Platform.select({
+                ios: {
+                    fontSize: 20
+                }
+            })
         },
         signupButtonTitle: {
             color: 'white'
@@ -93,7 +114,12 @@ export default StyleSheet.create(
         labelInput: {
             fontFamily: 'Lato-Regular',
             fontSize: 15 * fontRatio,
-            color: 'black'
+            color: 'black',
+            ...Platform.select({
+                ios: {
+                    fontSize: 20
+                }
+            })
         },
         textHeadline: {
             fontFamily: 'Lato-Bold',
@@ -102,7 +128,12 @@ export default StyleSheet.create(
             textShadowColor: 'rgba(0, 0, 0, 0.75)',
             textShadowOffset: {width: -1, height: 1},
             textShadowRadius: 10,
-            textAlign: 'center'
+            textAlign: 'center',
+            ...Platform.select({
+                ios: {
+                    fontSize: 25
+                }
+            })
         },
         loginFormButton: {
             width: '100%'
