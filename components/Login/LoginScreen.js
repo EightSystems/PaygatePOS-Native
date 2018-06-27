@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {View, ImageBackground, Image, Text, Platform, Dimensions, PixelRatio} from 'react-native';
+import {View, ScrollView, ImageBackground, Image, Text, Platform, Dimensions, PixelRatio} from 'react-native';
 
 import { Input, Icon } from 'react-native-elements';
 import Carousel, { Pagination } from 'react-native-snap-carousel';
@@ -9,7 +9,7 @@ import Button from '../GeneralUI/Button';
 import loginScreenStyle from './LoginStyle';
 import {loginSliderItems} from './';
 
-const fontRatio = PixelRatio.getFontScale();
+import {strings} from '../Utils/Locale';
 
 class LoginForm extends Component {
     constructor(props) {
@@ -57,7 +57,7 @@ class LoginForm extends Component {
                         position: 'absolute',
                         left: 10,
                         top: 25
-                    }} onPress={this.props.closePressed} size={40 * fontRatio}/>
+                    }} onPress={this.props.closePressed} size={40}/>
 
                 <Image source={require('./images/logo.png')} style={loginScreenStyle.mainLogo}/>
                 <View style={{width: "100%", justifyContent: 'center', alignItems: 'center'}}>
@@ -65,7 +65,7 @@ class LoginForm extends Component {
 
                         {this.props.signup ? (
                             <Input ref={ref => this.inputRefs['company'] = ref}
-                                inputContainerStyle={{width: '100%'}} placeholder="sua empresa..."
+                                inputContainerStyle={{width: '100%'}} placeholder={strings('login.company_label')}
                                 rightIcon={{ type: 'font-awesome', name: 'building-o', color: 'gray' }}
                                 inputStyle={loginScreenStyle.labelInput} placeholderTextColor={'#525e72'}
                                 returnKeyType={ "next" } blurOnSubmit={ false }
@@ -80,7 +80,7 @@ class LoginForm extends Component {
                         ) : null}
 
                         <Input ref={ref => this.inputRefs['username'] = ref}
-                            inputContainerStyle={{width: '100%'}} placeholder="e-mail..."
+                            inputContainerStyle={{width: '100%'}} placeholder={strings('login.email_label')}
                             rightIcon={{ type: 'font-awesome', name: 'user-o', color: 'gray' }}
                             inputStyle={loginScreenStyle.labelInput} placeholderTextColor={'#525e72'}
                             returnKeyType={ "next" } blurOnSubmit={ false }
@@ -94,7 +94,7 @@ class LoginForm extends Component {
                         />
 
                         <Input ref={ref => this.inputRefs['password'] = ref}
-                            inputContainerStyle={{width: '100%'}} placeholder="senha..."
+                            inputContainerStyle={{width: '100%'}} placeholder={strings('login.password_label')}
                             rightIcon={{ type: 'font-awesome', name: 'eye', color: 'gray' }}
                             inputStyle={loginScreenStyle.labelInput} secureTextEntry={true}
                             placeholderTextColor={'#525e72'} returnKeyType={ this.props.signup ? "next" : "done" }
@@ -109,7 +109,7 @@ class LoginForm extends Component {
 
                         {this.props.signup ? (
                             <Input ref={ref => this.inputRefs['rpassword'] = ref}
-                                inputContainerStyle={{width: '100%'}} placeholder="confirmar senha..."
+                                inputContainerStyle={{width: '100%'}} placeholder={strings('login.rpassword_label')}
                                 rightIcon={{ type: 'font-awesome', name: 'eye', color: 'gray' }}
                                 inputStyle={loginScreenStyle.labelInput} secureTextEntry={true}
                                 placeholderTextColor={'#525e72'} returnKeyType={ "done" }
@@ -132,7 +132,7 @@ class LoginForm extends Component {
                                 [loginScreenStyle.loginButtonTitle, loginScreenStyle.signupButtonTitle, loginScreenStyle.loginFormButton]
                             }
                             title={
-                                this.props.signup ? "INSCREVA-SE" : "ENTRAR"
+                                this.props.signup ? strings('login.signup_button') : strings('login.login_button')
                             }
                             onPress={() => this.moveToNextInput('submit')}
                         />
@@ -212,7 +212,7 @@ export default class LoginScreen extends Component {
                                 containerStyle={loginScreenStyle.loginButtonContainer}
                                 buttonStyle={loginScreenStyle.signupButton}
                                 titleStyle={[loginScreenStyle.loginButtonTitle, loginScreenStyle.signupButtonTitle]}
-                                title="INSCREVA-SE GRÁTIS"
+                                title={strings('login.signup_free_button')}
                                 onPress={() => {
                                     this.setState({
                                         flip: true,
@@ -231,7 +231,7 @@ export default class LoginScreen extends Component {
                                         signup: false
                                     })
                                 }}
-                                title="ENTRAR"
+                                title={strings('login.login_button')}
                             />
                         </View>
                     </View>

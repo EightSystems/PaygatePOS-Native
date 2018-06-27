@@ -3958,6 +3958,10 @@ hyphenate-style-name@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/hyphenate-style-name/-/hyphenate-style-name-1.0.2.tgz#31160a36930adaf1fc04c6074f7eb41465d4ec4b"
 
+i18n-js@^3.0.3:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/i18n-js/-/i18n-js-3.0.9.tgz#fea1f2886ca349744a5bfcc67c2d15509893d9cd"
+
 iconv-lite@0.4.19:
   version "0.4.19"
   resolved "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.19.tgz#f7468f60135f5e5dad3399c0a81be9a1603a082b"
@@ -6560,6 +6564,10 @@ react-native-calendars@^1.19.3:
     prop-types "^15.5.10"
     xdate "^0.8.0"
 
+react-native-device-detection@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/react-native-device-detection/-/react-native-device-detection-0.2.0.tgz#4a74367b147b173b249a009592401c93f9915797"
+
 react-native-electron@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/react-native-electron/-/react-native-electron-0.7.0.tgz#6b044b20beb9e41a50b3d84a7a0d3e7da993074e"
@@ -6581,6 +6589,12 @@ react-native-flip-card@^3.5.2:
   resolved "https://registry.yarnpkg.com/react-native-flip-card/-/react-native-flip-card-3.5.2.tgz#6563f4a6d95b999c21e82deec9b2f502175847d6"
   dependencies:
     prop-types "^15.5.10"
+
+react-native-i18n@^2.0.12:
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/react-native-i18n/-/react-native-i18n-2.0.12.tgz#4a503cc73b2fe55e8518f6d4a1340d3b449d8d1a"
+  dependencies:
+    i18n-js "^3.0.3"
 
 react-native-linear-gradient@^2.4.0:
   version "2.4.0"

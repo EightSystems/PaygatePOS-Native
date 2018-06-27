@@ -1,0 +1,20 @@
+{
+    "login": {
+        "signup_button": "SIGNUP",
+        "signup_free_button": "FREE SIGNUP",
+        "login_button": "LOGIN",
+        "company_label": "your company...",
+        "email_label": "e-mail...",
+        "password_label": "password...",
+        "rpassword_label": "repeat password...",
+        "sliderItems": [
+            "Management and POS system made for you and your company",
+            "Micro and small companies management. Shops, Restaurants, Pubs, Hotels, and Motels.",
+            "Above the clouds, but with local run",
+            "Modules that fits with you!",
+            "Adaptable system",
+            "Gold support!",
+            "Sign up now and receive one free week!"
+        ]
+    }
+}

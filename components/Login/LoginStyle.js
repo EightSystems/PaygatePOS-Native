@@ -1,8 +1,5 @@
 import {PixelRatio, StyleSheet, Platform} from 'react-native';
 
-const fontRatio = PixelRatio.getFontScale();
-const pixelDensity = PixelRatio.get();
-
 export default StyleSheet.create(
     {
         flipCardContainer: {
@@ -45,16 +42,10 @@ export default StyleSheet.create(
             height: '100%'
         },
         mainLogo: {
-            width: 250 * pixelDensity,
-            height: 100 * pixelDensity,
+            width: 250,
+            height: 100,
             resizeMode: 'stretch',
-            marginBottom: 30,
-            ...Platform.select({
-                ios: {
-                    width: 250,
-                    height: 100
-                }
-            })
+            marginBottom: 0
         },
         formContainer: {
             backgroundColor: 'rgba(255, 255, 255, 1)',
@@ -82,26 +73,16 @@ export default StyleSheet.create(
         loginButton: {
             backgroundColor: 'white',
             borderRadius: 20,
-            height: 60 * pixelDensity,
-            ...Platform.select({
-                ios: {
-                    height: 60
-                }
-            })
+            height: 60
         },
         signupButton: {
             borderRadius: 20,
-            height: 60 * pixelDensity,
-            ...Platform.select({
-                ios: {
-                    height: 60
-                }
-            })
+            height: 60
         },
         loginButtonTitle: {
             fontFamily: 'Lato-Regular',
             color: 'black',
-            fontSize: 20 * fontRatio,
+            fontSize: 20,
             ...Platform.select({
                 ios: {
                     fontSize: 20
@@ -113,27 +94,17 @@ export default StyleSheet.create(
         },
         labelInput: {
             fontFamily: 'Lato-Regular',
-            fontSize: 15 * fontRatio,
-            color: 'black',
-            ...Platform.select({
-                ios: {
-                    fontSize: 20
-                }
-            })
+            fontSize: 20,
+            color: 'black'
         },
         textHeadline: {
             fontFamily: 'Lato-Bold',
-            fontSize: 25 * fontRatio,
+            fontSize: 25,
             color: 'white',
             textShadowColor: 'rgba(0, 0, 0, 0.75)',
             textShadowOffset: {width: -1, height: 1},
             textShadowRadius: 10,
-            textAlign: 'center',
-            ...Platform.select({
-                ios: {
-                    fontSize: 25
-                }
-            })
+            textAlign: 'center'
         },
         loginFormButton: {
             width: '100%'

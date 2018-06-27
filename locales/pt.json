@@ -1,0 +1,20 @@
+{
+    "login": {
+        "signup_button": "REGISTRA-SE",
+        "signup_free_button": "REGISTRA-SE GRÁTIS",
+        "login_button": "ENTRAR",
+        "company_label": "sua empresa...",
+        "email_label": "e-mail...",
+        "password_label": "senha...",
+        "rpassword_label": "repete a senha...",
+        "sliderItems": [
+            "Sistema de gestão e caixa para ti, e tua empresa",
+            "Controle para micro, e pequenas empresas. Lojas, Restaurantes, Bares, Hoteis, Pousadas",
+            "Nas nuvens, mas com pouso local",
+            "Módulos que encaixam contigo!",
+            "Sistema adaptável",
+            "Suporte é ouro!",
+            "Registra-se agora, e receba uma semana gratuita!"
+        ]
+    }
+}
