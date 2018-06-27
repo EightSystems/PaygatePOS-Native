@@ -7,10 +7,12 @@
 import {UIManager} from 'react-native';
 
 import RNI18n from './RNI18n';
+import SplashScreen from './SplashScreen';
 
 const NativeModules = {
   UIManager,
-  RNI18n
+  RNI18n,
+  SplashScreen
 };
 
 export default NativeModules;

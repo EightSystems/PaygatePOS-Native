@@ -5,6 +5,7 @@
 	};
 	objectVersion = 46;
 	objects = {
+
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -27,6 +28,7 @@
 		1945D4FCF2564CA4A2830AAB /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4C3060A4B7444F88CA5930 /* Lato-BoldItalic.ttf */; };
 		1BFA1F2AC7D5447AB24D8932 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B37794688D8E4A2FB646F785 /* SimpleLineIcons.ttf */; };
 		1ED9555814934FFBA6E055D9 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D7AE760A9DA41F69E18FF4C /* Lato-LightItalic.ttf */; };
+		20B78A6620E43EBD00E1F79D /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B78A6520E43E9B00E1F79D /* libSplashScreen.a */; };
 		24CB0766987045678C5703A4 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 756483859DF84464A7E6BA1D /* Lato-Regular.ttf */; };
 		27E276BB91154E5596B50925 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47C6B449A76D432DA83A6E6A /* MaterialIcons.ttf */; };
 		2CA9FCED96F449D296650B93 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA041F26C4D47B83F1E13 /* EvilIcons.ttf */; };
@@ -183,6 +185,13 @@
 			proxyType = 2;
 			remoteGlobalIDString = 5DBEB1501B18CEA900B34395;
 			remoteInfo = RNVectorIcons;
+		};
+		20B78A6420E43E9B00E1F79D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 20B78A3520E43E9B00E1F79D /* SplashScreen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D7682761D8E76B80014119E;
+			remoteInfo = SplashScreen;
 		};
 		2D02E4911E0B4A5D006451C7 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -424,6 +433,7 @@
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
 		1BEB6061415F0F378830595B /* Pods-PaygatePOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOSTests/Pods-PaygatePOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		1F8EA041F26C4D47B83F1E13 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		20B78A3520E43E9B00E1F79D /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		20CE225CD3A44D2C9A625DCC /* libAppCenterReactNativeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeAnalytics.a; sourceTree = "<group>"; };
 		26C372A63E3F4E73B55090C8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
 		2B9F61EE20284B47A0A44670 /* Lato-Hairline.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Hairline.ttf"; path = "../assets/fonts/Lato-Hairline.ttf"; sourceTree = "<group>"; };
@@ -491,6 +501,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				20B78A6620E43EBD00E1F79D /* libSplashScreen.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -710,6 +721,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		20B78A3620E43E9B00E1F79D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				20B78A6520E43E9B00E1F79D /* libSplashScreen.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -743,6 +762,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				20B78A3520E43E9B00E1F79D /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -1053,6 +1073,10 @@
 					ProductGroup = 205D951120E3228E00E059A3 /* Products */;
 					ProjectRef = 0A6E8DA72635475B81639ED3 /* RNVectorIcons.xcodeproj */;
 				},
+				{
+					ProductGroup = 20B78A3620E43E9B00E1F79D /* Products */;
+					ProjectRef = 20B78A3520E43E9B00E1F79D /* SplashScreen.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -1161,6 +1185,13 @@
 			fileType = archive.ar;
 			path = libRNVectorIcons.a;
 			remoteRef = 205D952920E3228F00E059A3 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		20B78A6520E43E9B00E1F79D /* libSplashScreen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSplashScreen.a;
+			remoteRef = 20B78A6420E43E9B00E1F79D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		2D16E6721FA4F8DC00B85C8A /* libRCTBlob-tvOS.a */ = {
@@ -1803,6 +1834,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = PaygatePOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1830,6 +1862,7 @@
 					"$(SRCROOT)/../node_modules/appcenter/ios/AppCenterReactNative",
 					"$(SRCROOT)/../node_modules/appcenter-analytics/ios/AppCenterReactNativeAnalytics",
 					"$(SRCROOT)/../node_modules/appcenter-crashes/ios/AppCenterReactNativeCrashes",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = PaygatePOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

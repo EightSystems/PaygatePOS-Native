@@ -1,7 +1,7 @@
 export default class {
     static languages = [navigator.language];
 
-    getLanguages = () => {
+    static getLanguages() {
         return new Promise((resolve, reject) => {
             resolve(this.languages);
         })

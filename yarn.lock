@@ -530,6 +530,10 @@
     "@shellscape/koa-send" "^4.1.0"
     debug "^2.6.8"
 
+"@trodi/electron-splashscreen@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@trodi/electron-splashscreen/-/electron-splashscreen-0.3.1.tgz#7e454644ee3017ef012ba1e18977c96bc0c5b70a"
+
 "@types/node@^8.0.24":
   version "8.10.20"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-8.10.20.tgz#fe674ea52e13950ab10954433a7824438aabbcac"
@@ -6608,6 +6612,10 @@ react-native-snap-carousel@^3.7.2:
   dependencies:
     prop-types "^15.6.1"
     react-addons-shallow-compare "15.6.2"
+
+react-native-splash-screen@^3.0.9:
+  version "3.0.9"
+  resolved "https://registry.yarnpkg.com/react-native-splash-screen/-/react-native-splash-screen-3.0.9.tgz#5cdd026ae414d60cd86bcaa897bffacd16395bed"
 
 "react-native-swiper@github:tryvin/react-native-swiper":
   version "1.5.13"

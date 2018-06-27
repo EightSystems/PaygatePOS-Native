@@ -25,6 +25,7 @@
     "package-travis": "npm run build && build --win --linux"
   },
   "dependencies": {
+    "@trodi/electron-splashscreen": "^0.3.1",
     "appcenter": "^1.6.0",
     "appcenter-analytics": "^1.6.0",
     "appcenter-crashes": "^1.6.0",
@@ -42,6 +43,7 @@
     "react-native-i18n": "^2.0.12",
     "react-native-linear-gradient": "^2.4.0",
     "react-native-snap-carousel": "^3.7.2",
+    "react-native-splash-screen": "^3.0.9",
     "react-native-swiper": "github:tryvin/react-native-swiper",
     "react-native-vector-icons": "^4.6.0",
     "react-native-web": "^0.8.3"
