@@ -5,9 +5,12 @@
 */
 
 import React, { Component } from 'react';
-import SplashScreen from 'react-native-splash-screen'
+import { Provider } from 'react-redux';
+import SplashScreen from 'react-native-splash-screen';
 
-import LoginScreen from './components/Login/LoginScreen';
+import reduxStore from './components/Utils/Redux';
+
+import MainApp from './components/MainApp';
 
 type Props = {};
 export default class App extends Component<Props> {
@@ -17,7 +20,9 @@ export default class App extends Component<Props> {
 
     render() {
         return (
-            <LoginScreen/>
+            <Provider store={reduxStore}>
+                <MainApp/>
+            </Provider>
         );
     }
 }

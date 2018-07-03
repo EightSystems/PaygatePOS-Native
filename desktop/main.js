@@ -21,7 +21,7 @@ const createWindow = () => {
             width: 440,
             height: 600,
             show: false,
-            resizable: true
+            resizable: false
         },
         templateUrl: process.env.HOT ? `${__dirname}/splash.html` : `${__dirname}/../splash.html`,
         splashScreenOpts: {
@@ -41,11 +41,7 @@ const createWindow = () => {
     });
 
     ipcMain.on('maximize', () => {
-        if ( mainWindow.isMaximized() ) {
-            mainWindow.unmaximize();
-            mainWindow.setResizable(false);
-        }
-        else {
+        if ( ! mainWindow.isMaximized() ) {
             mainWindow.setResizable(true);
             mainWindow.maximize();
         }

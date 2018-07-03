@@ -25,7 +25,7 @@ module.exports = {
               loader: 'url-loader'
           },
           {
-              test: /\.(png|jpe?g|gif)$/,
+              test: /\.(png|jpe?g|gif|svg)$/,
               use: 'url-loader'
           }
       ],
@@ -34,7 +34,7 @@ module.exports = {
     alias: {
       'react-native': 'react-native-electron',
     },
-    extensions: ['.web.js', '.js', '.json'],
+    extensions: ['.electron.js', '.web.js', '.js', '.json'],
   },
   plugins: [
     new webpack.EnvironmentPlugin({
