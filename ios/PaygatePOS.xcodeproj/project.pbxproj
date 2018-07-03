@@ -28,6 +28,8 @@
 		1945D4FCF2564CA4A2830AAB /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CB4C3060A4B7444F88CA5930 /* Lato-BoldItalic.ttf */; };
 		1BFA1F2AC7D5447AB24D8932 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B37794688D8E4A2FB646F785 /* SimpleLineIcons.ttf */; };
 		1ED9555814934FFBA6E055D9 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5D7AE760A9DA41F69E18FF4C /* Lato-LightItalic.ttf */; };
+		200AFF4620EB0AD3007DC77D /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 20B78A6520E43E9B00E1F79D /* libSplashScreen.a */; };
+		200AFF7B20EB0B04007DC77D /* libRNI18n.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 200AFF7820EB0AFD007DC77D /* libRNI18n.a */; };
 		24CB0766987045678C5703A4 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 756483859DF84464A7E6BA1D /* Lato-Regular.ttf */; };
 		27E276BB91154E5596B50925 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 47C6B449A76D432DA83A6E6A /* MaterialIcons.ttf */; };
 		2CA9FCED96F449D296650B93 /* EvilIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1F8EA041F26C4D47B83F1E13 /* EvilIcons.ttf */; };
@@ -48,11 +50,9 @@
 		361CF31A349B4917A89D0358 /* Lato-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C876E4FD836747FB8C77D5E3 /* Lato-Semibold.ttf */; };
 		373B26EAF5F047F5A7C19525 /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0798D5D4C48B4A04BDA7EBB5 /* Lato-BlackItalic.ttf */; };
 		3B6EE33D67494C6A9495E574 /* libRNVectorIcons.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E9E66EBF56894C7E8AFA5C34 /* libRNVectorIcons.a */; };
-		40E3D2B36EDDE3EE9D922896 /* libPods-PaygatePOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0F31CF826B38C994D08E0D /* libPods-PaygatePOS.a */; };
 		41AB1EC5832B488881C95385 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 06B501BA894D4659AE928690 /* Octicons.ttf */; };
 		5B80A0539B504A46B72AB5DC /* libBVLinearGradient.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4108D76211FF4446B55926FB /* libBVLinearGradient.a */; };
 		5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E9157331DD0AC6500FF2AA8 /* libRCTAnimation.a */; };
-		7ACE11F6EF1057B13CEDDB19 /* libPods-PaygatePOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DD38E1F5AC876DE1E3874F /* libPods-PaygatePOSTests.a */; };
 		805008DBB4FB4D52A36233BF /* Foundation.ttf in Resources */ = {isa = PBXBuildFile; fileRef = E61AEE7F1C1743548434C6F8 /* Foundation.ttf */; };
 		80E977F7C01643D3A8831945 /* Lato-Hairline.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2B9F61EE20284B47A0A44670 /* Lato-Hairline.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
@@ -142,6 +142,20 @@
 			proxyType = 2;
 			remoteGlobalIDString = 83CBBA2E1A601D0E00E9B192;
 			remoteInfo = React;
+		};
+		200AFF7720EB0AFD007DC77D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 200AFF7220EB0AFC007DC77D /* RNI18n.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 134814201AA4EA6300B7C361;
+			remoteInfo = RNI18n;
+		};
+		200AFF7920EB0AFD007DC77D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 200AFF7220EB0AFC007DC77D /* RNI18n.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 6476C4051EEAA69700B10F51;
+			remoteInfo = "RNI18n-tvOS";
 		};
 		205D951A20E3228F00E059A3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -430,8 +444,8 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PaygatePOS/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PaygatePOS/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
-		1BEB6061415F0F378830595B /* Pods-PaygatePOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOSTests/Pods-PaygatePOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		1F8EA041F26C4D47B83F1E13 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
+		200AFF7220EB0AFC007DC77D /* RNI18n.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/ios/RNI18n.xcodeproj"; sourceTree = "<group>"; };
 		20B78A3520E43E9B00E1F79D /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		20CE225CD3A44D2C9A625DCC /* libAppCenterReactNativeAnalytics.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libAppCenterReactNativeAnalytics.a; sourceTree = "<group>"; };
 		26C372A63E3F4E73B55090C8 /* Feather.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Feather.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Feather.ttf"; sourceTree = "<group>"; };
@@ -444,7 +458,6 @@
 		351E81F747F909658220D2B0 /* Pods-PaygatePOS-tvOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS-tvOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS-tvOS/Pods-PaygatePOS-tvOS.debug.xcconfig"; sourceTree = "<group>"; };
 		4108D76211FF4446B55926FB /* libBVLinearGradient.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libBVLinearGradient.a; sourceTree = "<group>"; };
 		47C6B449A76D432DA83A6E6A /* MaterialIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = MaterialIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/MaterialIcons.ttf"; sourceTree = "<group>"; };
-		4BCD394DE5DCEDD34962A240 /* Pods-PaygatePOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOSTests/Pods-PaygatePOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		55B494CEC1134D67B46C17C6 /* Lato-HairlineItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-HairlineItalic.ttf"; path = "../assets/fonts/Lato-HairlineItalic.ttf"; sourceTree = "<group>"; };
 		5D7AE760A9DA41F69E18FF4C /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-LightItalic.ttf"; path = "../assets/fonts/Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		5DE99FEC34C94D5A97EE1ADA /* Lato-HeavyItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-HeavyItalic.ttf"; path = "../assets/fonts/Lato-HeavyItalic.ttf"; sourceTree = "<group>"; };
@@ -492,7 +505,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				140ED2AC1D01E1AD002B40FF /* libReact.a in Frameworks */,
-				7ACE11F6EF1057B13CEDDB19 /* libPods-PaygatePOSTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -500,6 +512,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				200AFF7B20EB0B04007DC77D /* libRNI18n.a in Frameworks */,
+				200AFF4620EB0AD3007DC77D /* libSplashScreen.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				5E9157361DD0AC6A00FF2AA8 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -518,7 +532,6 @@
 				8C0BEF53515B4ACDA829B082 /* libAppCenterReactNative.a in Frameworks */,
 				D923B19BC77247A9A3CED69D /* libAppCenterReactNativeAnalytics.a in Frameworks */,
 				0F6A3559C5BF4598981A9125 /* libAppCenterReactNativeCrashes.a in Frameworks */,
-				40E3D2B36EDDE3EE9D922896 /* libPods-PaygatePOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -666,6 +679,15 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		200AFF7320EB0AFC007DC77D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				200AFF7820EB0AFD007DC77D /* libRNI18n.a */,
+				200AFF7A20EB0AFD007DC77D /* libRNI18n-tvOS.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		205D94E920E3228C00E059A3 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
@@ -760,6 +782,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				200AFF7220EB0AFC007DC77D /* RNI18n.xcodeproj */,
 				20B78A3520E43E9B00E1F79D /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
@@ -874,8 +897,6 @@
 				01C305EBB2435A04CD4779F0 /* Pods-PaygatePOS-tvOS.release.xcconfig */,
 				2C2AE963B4069418A40D5ED1 /* Pods-PaygatePOS-tvOSTests.debug.xcconfig */,
 				F925DB6B4DBBB65BDB9D70AF /* Pods-PaygatePOS-tvOSTests.release.xcconfig */,
-				4BCD394DE5DCEDD34962A240 /* Pods-PaygatePOSTests.debug.xcconfig */,
-				1BEB6061415F0F378830595B /* Pods-PaygatePOSTests.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -887,12 +908,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "PaygatePOSTests" */;
 			buildPhases = (
-				C04381757A844C35E6AB1B78 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				FB93F38BEB4CA8CDA951EB64 /* [CP] Embed Pods Frameworks */,
-				9303A669A4A6BCF7504A6FAC /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -1071,6 +1089,10 @@
 					ProjectRef = 146833FF1AC3E56700842450 /* React.xcodeproj */;
 				},
 				{
+					ProductGroup = 200AFF7320EB0AFC007DC77D /* Products */;
+					ProjectRef = 200AFF7220EB0AFC007DC77D /* RNI18n.xcodeproj */;
+				},
+				{
 					ProductGroup = 205D951120E3228E00E059A3 /* Products */;
 					ProjectRef = 0A6E8DA72635475B81639ED3 /* RNVectorIcons.xcodeproj */;
 				},
@@ -1144,6 +1166,20 @@
 			fileType = archive.ar;
 			path = libReact.a;
 			remoteRef = 146834031AC3E56700842450 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		200AFF7820EB0AFD007DC77D /* libRNI18n.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libRNI18n.a;
+			remoteRef = 200AFF7720EB0AFD007DC77D /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		200AFF7A20EB0AFD007DC77D /* libRNI18n-tvOS.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libRNI18n-tvOS.a";
+			remoteRef = 200AFF7920EB0AFD007DC77D /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		205D951B20E3228F00E059A3 /* libAppCenterReactNative.a */ = {
@@ -1571,39 +1607,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaygatePOS/Pods-PaygatePOS-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		9303A669A4A6BCF7504A6FAC /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaygatePOSTests/Pods-PaygatePOSTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C04381757A844C35E6AB1B78 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-PaygatePOSTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		C56E7E00F7DBF532217F5916 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1668,21 +1671,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaygatePOS-tvOSTests/Pods-PaygatePOS-tvOSTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		FB93F38BEB4CA8CDA951EB64 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PaygatePOSTests/Pods-PaygatePOSTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -1752,7 +1740,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4BCD394DE5DCEDD34962A240 /* Pods-PaygatePOSTests.debug.xcconfig */;
+			baseConfigurationReference = EE37DB2F9589FB75D9F54437 /* Pods-PaygatePOS.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1789,7 +1777,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1BEB6061415F0F378830595B /* Pods-PaygatePOSTests.release.xcconfig */;
+			baseConfigurationReference = EDE0389D77A81EC5E5A19E9E /* Pods-PaygatePOS.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1970,7 +1958,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2C2AE963B4069418A40D5ED1 /* Pods-PaygatePOS-tvOSTests.debug.xcconfig */;
+			baseConfigurationReference = 351E81F747F909658220D2B0 /* Pods-PaygatePOS-tvOS.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

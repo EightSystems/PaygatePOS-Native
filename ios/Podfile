@@ -10,34 +10,6 @@ target 'PaygatePOS' do
   pod 'AppCenter/Analytics', '~> 1.7.1'
   pod 'AppCenterReactNativeShared', '~> 1.6.0'
 
-pod 'React', :path => '../node_modules/react-native', :subspecs => [
-  'Core', # Include this to enable In-App Devmenu if RN >= 0.43
-  'RCTText',
-  'CxxBridge',
-  'DevSupport',
-  'RCTNetwork',
-  'RCTImage',
-  'RCTLinkingIOS',
-  'RCTActionSheet',
-  'RCTWebSocket', # needed for debugging
-  # Add any other subspecs you want to use in your project
-  ]
-  pod 'yoga', :path => '../node_modules/react-native/ReactCommon/yoga'
-pod ‘glog', :podspec => '../node_modules/react-native/third-party-podspecs/GLog.podspec'
-
-pod 'DoubleConversion', :podspec => '../node_modules/react-native/third-party-podspecs/DoubleConversion.podspec'
-
-pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
-
-  pod 'RNI18n', :path => '../node_modules/react-native-i18n'
-
-  pod 'react-native-splash-screen', :path => '../node_modules/react-native-splash-screen'
-
-  target 'PaygatePOSTests' do
-    inherit! :search_paths
-    # Pods for testing
-  end
-
 end
 
 target 'PaygatePOS-tvOS' do
