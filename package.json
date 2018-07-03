@@ -31,7 +31,6 @@
     "appcenter-analytics": "^1.6.0",
     "appcenter-crashes": "^1.6.0",
     "babel-regenerator-runtime": "^6.5.0",
-    "escpos": "github:EightSystems/node-escpos",
     "printer": "^0.2.2",
     "react": "16.3.1",
     "react-art": "^16.4.1",
