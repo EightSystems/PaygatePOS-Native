@@ -10,6 +10,8 @@ target 'PaygatePOS' do
   pod 'AppCenter/Analytics', '~> 1.7.1'
   pod 'AppCenterReactNativeShared', '~> 1.6.0'
 
+  pod 'RNFS', :path => '../node_modules/react-native-fs'
+
 end
 
 target 'PaygatePOS-tvOS' do

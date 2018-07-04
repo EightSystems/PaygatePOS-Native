@@ -6,6 +6,7 @@ import { REHYDRATE } from 'redux-persist/constants'
 
 import userReducer from './user';
 import userLoginReducer from './userLogin';
+import printerReducer from './printer';
 
 const reduxData = (state = {}, action) => {
     switch(action.type) {
@@ -24,5 +25,6 @@ const reduxData = (state = {}, action) => {
 export default combineReducers({
     userReducer,
     userLoginReducer,
+    printerReducer,
     reduxData
 });

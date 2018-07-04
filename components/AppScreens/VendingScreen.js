@@ -41,7 +41,11 @@ class VendingScreen extends Component {
         this.columnNumber = isTablet ? Math.floor((width - 70) / 130) : Math.floor(width / 130);
         this.listWidth = isTablet ? width - 70 : width;
 
-        this.tableList = Array.apply(null, Array(300)).map((x, i) => i+1);
+        this.tableList = Array.apply(null, Array(10)).map((x, i) => i+1);
+    }
+
+    vendingIconPress = () => {
+
     }
 
     render() {
@@ -60,7 +64,7 @@ class VendingScreen extends Component {
                         let isOpen = Math.random() > 0.7 ? true : false;
 
                         return (
-                            <VendingIcon isOpen={isOpen} isPendingCommand={isPendingCommand} title={`Comanda ${item}`} />
+                            <VendingIcon isOpen={isOpen} isPendingCommand={isPendingCommand} title={`Comanda ${item}`} onPress={this.vendingIconPress}/>
                         )
                     }}
                 />

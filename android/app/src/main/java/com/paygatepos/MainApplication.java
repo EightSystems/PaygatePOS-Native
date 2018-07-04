@@ -3,6 +3,8 @@ package com.paygatepos;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.rnfs.RNFSPackage;
+import com.rusel.RCTBluetoothSerial.RCTBluetoothSerialPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import com.AlexanderZaytsev.RNI18n.RNI18nPackage;
 import com.microsoft.appcenter.reactnative.crashes.AppCenterReactNativeCrashesPackage;
@@ -30,6 +32,8 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new RNFSPackage(),
+            new RCTBluetoothSerialPackage(),
             new SplashScreenReactPackage(),
             new RNI18nPackage(),
             new AppCenterReactNativeCrashesPackage(MainApplication.this, getResources().getString(R.string.appCenterCrashes_whenToSendCrashes)),

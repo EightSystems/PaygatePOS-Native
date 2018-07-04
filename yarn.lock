@@ -521,6 +521,43 @@
     babel-runtime "^6.26.0"
     redux-persist "^4.5.0"
 
+"@serialport/parser-byte-length@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@serialport/parser-byte-length/-/parser-byte-length-1.0.5.tgz#3ea84d47cb259165f9e4911fbbcb98a46550dd0e"
+  dependencies:
+    safe-buffer "^5.1.1"
+
+"@serialport/parser-cctalk@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@serialport/parser-cctalk/-/parser-cctalk-1.0.5.tgz#e489254d1a6b29fb35187366e540c68624f33ab0"
+  dependencies:
+    safe-buffer "^5.1.1"
+
+"@serialport/parser-delimiter@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@serialport/parser-delimiter/-/parser-delimiter-1.0.5.tgz#4cb42883def663fbfab5574455471ed0721f5b0a"
+  dependencies:
+    safe-buffer "^5.1.1"
+
+"@serialport/parser-readline@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@serialport/parser-readline/-/parser-readline-1.0.5.tgz#705356d1a16c6a86f2a39778585305cf153d0b8e"
+  dependencies:
+    "@serialport/parser-delimiter" "^1.0.5"
+    safe-buffer "^5.1.1"
+
+"@serialport/parser-ready@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@serialport/parser-ready/-/parser-ready-1.0.5.tgz#8921455afab47ea7098abc7a4a70702c7ca647aa"
+  dependencies:
+    safe-buffer "^5.1.1"
+
+"@serialport/parser-regex@^1.0.5":
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/@serialport/parser-regex/-/parser-regex-1.0.5.tgz#932f836343ab48d724905e5ff89f8f3dc28e6516"
+  dependencies:
+    safe-buffer "^5.1.1"
+
 "@shellscape/koa-send@^4.1.0":
   version "4.1.3"
   resolved "https://registry.yarnpkg.com/@shellscape/koa-send/-/koa-send-4.1.3.tgz#1a7c8df21f63487e060b7bfd8ed82e1d3c4ae0b0"
@@ -1211,7 +1248,7 @@ assert-plus@1.0.0, assert-plus@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/assert-plus/-/assert-plus-1.0.0.tgz#f12e0f3c5d77b0b1cdd9146942e4e96c1e4dd525"
 
-assert@^1.1.1:
+assert@^1.1.1, assert@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/assert/-/assert-1.4.1.tgz#99912d591836b5a6f5b345c0f07eefc08fc65d91"
   dependencies:
@@ -1904,6 +1941,10 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
+base-64@^0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/base-64/-/base-64-0.1.0.tgz#780a99c84e7d600260361511c4877613bf24f6bb"
+
 base64-js@0.0.8:
   version "0.0.8"
   resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-0.0.8.tgz#1101e9544f4a76b1bc3b26d452ca96d7a35e7978"
@@ -2087,7 +2128,7 @@ browserify-rsa@^4.0.0:
     bn.js "^4.1.0"
     randombytes "^2.0.1"
 
-browserify-sign@^4.0.0:
+browserify-sign@^4.0.0, browserify-sign@^4.0.4:
   version "4.0.4"
   resolved "https://registry.yarnpkg.com/browserify-sign/-/browserify-sign-4.0.4.tgz#aa4eb68e5d7b658baa6bf6a57e630cbd7a93d298"
   dependencies:
@@ -2134,13 +2175,20 @@ buffer-xor@^1.0.3:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/buffer-xor/-/buffer-xor-1.0.3.tgz#26e61ed1422fb70dd42e6e36729ed51d855fe8d9"
 
-buffer@^4.3.0:
+buffer@^4.3.0, buffer@^4.6.0, buffer@^4.9.1:
   version "4.9.1"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-4.9.1.tgz#6d1bb601b07a4efced97094132093027c95bc298"
   dependencies:
     base64-js "^1.0.2"
     ieee754 "^1.1.4"
     isarray "^1.0.0"
+
+buffer@^5.0.6:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.1.0.tgz#c913e43678c7cb7c8bd16afbcddb6c5505e8f9fe"
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
 
 builder-util-runtime@4.2.1, builder-util-runtime@^4.2.1:
   version "4.2.1"
@@ -3362,7 +3410,7 @@ escodegen@^1.9.0:
 
 "escpos@github:EightSystems/node-escpos":
   version "2.4.9"
-  resolved "https://codeload.github.com/EightSystems/node-escpos/tar.gz/ccb50be2f223b3261fb749bdcfc8e1d1550f53a5"
+  resolved "https://codeload.github.com/EightSystems/node-escpos/tar.gz/b63916dbccb053657c8027f52512ec847d167914"
   dependencies:
     deep-assign "^2.0.0"
     iconv-lite "*"
@@ -6208,6 +6256,33 @@ node-libs-browser@^2.0.0:
     util "^0.10.3"
     vm-browserify "0.0.4"
 
+node-libs-react-native@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/node-libs-react-native/-/node-libs-react-native-1.0.2.tgz#eab0fabfc44b7012491d3b149e61879a1fecc9b0"
+  dependencies:
+    assert "^1.4.1"
+    browserify-zlib "^0.2.0"
+    buffer "^5.0.6"
+    console-browserify "^1.1.0"
+    constants-browserify "^1.0.0"
+    domain-browser "^1.1.1"
+    events "^1.0.0"
+    https-browserify "^1.0.0"
+    os-browserify "^0.3.0"
+    path-browserify "0.0.0"
+    process "^0.11.0"
+    punycode "^2.1.0"
+    querystring-es3 "^0.2.0"
+    react-native-crypto "^2.0.1"
+    react-native-randombytes "^2.2.0"
+    readable-stream "^2.2.9"
+    stream-http "^2.3.1"
+    string_decoder "^1.0.3"
+    timers-browserify "^2.0.2"
+    tty-browserify "0.0.0"
+    url "^0.11.0"
+    util "^0.10.3"
+
 node-modules-regexp@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/node-modules-regexp/-/node-modules-regexp-1.0.0.tgz#8d9dbe28964a4ac5712e9131642107c71e90ec40"
@@ -6592,43 +6667,6 @@ parse5@4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/parse5/-/parse5-4.0.0.tgz#6d78656e3da8d78b4ec0b906f7c08ef1dfe3f608"
 
-parser-byte-length@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/parser-byte-length/-/parser-byte-length-1.0.2.tgz#581c1e32949a7859087919607cc860eab76ddd59"
-  dependencies:
-    safe-buffer "^5.1.1"
-
-parser-cctalk@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/parser-cctalk/-/parser-cctalk-1.0.2.tgz#1f99901b8799171427f8fd2307ec9e517c55a3b4"
-  dependencies:
-    safe-buffer "^5.1.1"
-
-parser-delimiter@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/parser-delimiter/-/parser-delimiter-1.0.2.tgz#1087850069bb4418a3ee152e9384679bcba247c1"
-  dependencies:
-    safe-buffer "^5.1.1"
-
-parser-readline@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/parser-readline/-/parser-readline-1.0.2.tgz#19d1c4856a646f64fe90be663ee2c545a09f36e3"
-  dependencies:
-    parser-delimiter "^1.0.2"
-    safe-buffer "^5.1.1"
-
-parser-ready@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/parser-ready/-/parser-ready-1.0.2.tgz#da49dbf1f261846e1925c9e0c18093750c508315"
-  dependencies:
-    safe-buffer "^5.1.1"
-
-parser-regex@^1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/parser-regex/-/parser-regex-1.0.2.tgz#abbcd2a39895787fd54ac0373b2b61490f9703e7"
-  dependencies:
-    safe-buffer "^5.1.1"
-
 parser-toolkit@>=0.0.3:
   version "0.0.5"
   resolved "https://registry.yarnpkg.com/parser-toolkit/-/parser-toolkit-0.0.5.tgz#ec4b61729c86318b56ea971bfba6b3c672d62c01"
@@ -6700,6 +6738,12 @@ path-type@^3.0.0:
   resolved "https://registry.yarnpkg.com/path-type/-/path-type-3.0.0.tgz#cef31dc8e0a1a3bb0d105c0cd97cf3bf47f4e36f"
   dependencies:
     pify "^3.0.0"
+
+pbkdf2@3.0.8:
+  version "3.0.8"
+  resolved "https://registry.yarnpkg.com/pbkdf2/-/pbkdf2-3.0.8.tgz#2f8abf16ebecc82277945d748aba1d78761f61e2"
+  dependencies:
+    create-hmac "^1.1.2"
 
 pbkdf2@^3.0.3:
   version "3.0.16"
@@ -6816,9 +6860,9 @@ posix-character-classes@^0.1.0:
   version "0.1.1"
   resolved "https://registry.yarnpkg.com/posix-character-classes/-/posix-character-classes-0.1.1.tgz#01eac0fe3b5af71a2a6c02feabb8c1fef7e00eab"
 
-prebuild-install@^2.4.1:
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-2.5.3.tgz#9f65f242782d370296353710e9bc843490c19f69"
+prebuild-install@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/prebuild-install/-/prebuild-install-4.0.0.tgz#206ce8106ce5efa4b6cf062fc8a0a7d93c17f3a8"
   dependencies:
     detect-libc "^1.0.3"
     expand-template "^1.0.2"
@@ -6878,7 +6922,7 @@ process-nextick-args@~2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/process-nextick-args/-/process-nextick-args-2.0.0.tgz#a37d732f4271b4ab1ad070d35508e8290788ffaa"
 
-process@^0.11.10:
+process@^0.11.0, process@^0.11.10:
   version "0.11.10"
   resolved "https://registry.yarnpkg.com/process/-/process-0.11.10.tgz#7332300e840161bda3e69a1d1d91a7d4bc16f182"
 
@@ -6960,7 +7004,7 @@ prompt-choices@^4.0.5:
     terminal-paginator "^2.0.2"
     toggle-array "^1.0.1"
 
-prompt-list@^3.1.2:
+prompt-list@^3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/prompt-list/-/prompt-list-3.2.0.tgz#b33472e01677a5751f59094fa7fe20b09da9db94"
   dependencies:
@@ -7162,6 +7206,16 @@ react-lifecycles-compat@^3, react-lifecycles-compat@^3.0.4:
   version "3.0.4"
   resolved "https://registry.yarnpkg.com/react-lifecycles-compat/-/react-lifecycles-compat-3.0.4.tgz#4f1a273afdfc8f3488a8c516bfda78f872352362"
 
+react-native-actionsheet@^2.4.2:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/react-native-actionsheet/-/react-native-actionsheet-2.4.2.tgz#6a00dd51a75ef2c8974312130e405af73191500f"
+
+react-native-bluetooth-serial@^1.0.0-rc1:
+  version "1.0.0-rc1"
+  resolved "https://registry.yarnpkg.com/react-native-bluetooth-serial/-/react-native-bluetooth-serial-1.0.0-rc1.tgz#483e762646433e25dd15a04811e7119c0c4ae25a"
+  dependencies:
+    buffer "^4.6.0"
+
 react-native-calendars@^1.19.3:
   version "1.19.3"
   resolved "https://registry.yarnpkg.com/react-native-calendars/-/react-native-calendars-1.19.3.tgz#4a9a6ec9d695b9f5f6003d80fe6c0930453e89eb"
@@ -7170,6 +7224,20 @@ react-native-calendars@^1.19.3:
     lodash.isequal "^4.5.0"
     prop-types "^15.5.10"
     xdate "^0.8.0"
+
+react-native-crypto@^2.0.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-crypto/-/react-native-crypto-2.1.2.tgz#cfe68cad51cd1f73a4202b7ac164f96c1144cb2a"
+  dependencies:
+    browserify-cipher "^1.0.0"
+    browserify-sign "^4.0.4"
+    create-ecdh "^4.0.0"
+    create-hash "^1.1.0"
+    create-hmac "^1.1.0"
+    diffie-hellman "^5.0.0"
+    inherits "^2.0.1"
+    pbkdf2 "3.0.8"
+    public-encrypt "^4.0.0"
 
 react-native-device-detection@^0.2.0:
   version "0.2.0"
@@ -7213,6 +7281,13 @@ react-native-flip-card@^3.5.2:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-fs@^2.10.14:
+  version "2.10.14"
+  resolved "https://registry.yarnpkg.com/react-native-fs/-/react-native-fs-2.10.14.tgz#394721801825db8330b62e92ae36861fd9864084"
+  dependencies:
+    base-64 "^0.1.0"
+    utf8 "^2.1.1"
+
 react-native-i18n@^2.0.12:
   version "2.0.12"
   resolved "https://registry.yarnpkg.com/react-native-i18n/-/react-native-i18n-2.0.12.tgz#4a503cc73b2fe55e8518f6d4a1340d3b449d8d1a"
@@ -7224,6 +7299,13 @@ react-native-linear-gradient@^2.4.0:
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.4.0.tgz#51d8ea12bb72a59bede9edc87b694b16b64cf435"
   dependencies:
     prop-types "^15.5.10"
+
+react-native-randombytes@^2.2.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/react-native-randombytes/-/react-native-randombytes-2.3.0.tgz#3ed6f8a4a803c453d787961047f6b2650d7c7335"
+  dependencies:
+    buffer "^4.9.1"
+    sjcl "^1.0.3"
 
 react-native-safe-area-view@^0.7.0:
   version "0.7.0"
@@ -7512,7 +7594,7 @@ read-pkg@^3.0.0:
     normalize-package-data "^2.3.2"
     path-type "^3.0.0"
 
-"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.3.0, readable-stream@^2.3.3, readable-stream@^2.3.5, readable-stream@^2.3.6:
+"readable-stream@1 || 2", readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable-stream@^2.0.4, readable-stream@^2.0.6, readable-stream@^2.1.5, readable-stream@^2.2.2, readable-stream@^2.2.9, readable-stream@^2.3.0, readable-stream@^2.3.3, readable-stream@^2.3.5, readable-stream@^2.3.6:
   version "2.3.6"
   resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-2.3.6.tgz#b11c27d88b8ff1fbe070643cf94b0c79ae1b0aaf"
   dependencies:
@@ -7965,23 +8047,23 @@ serialize-javascript@^1.4.0:
   resolved "https://registry.yarnpkg.com/serialize-javascript/-/serialize-javascript-1.5.0.tgz#1aa336162c88a890ddad5384baebc93a655161fe"
 
 serialport@*:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/serialport/-/serialport-6.2.0.tgz#99413b30b160ff06711563a71324f0959c48a7a0"
+  version "6.2.1"
+  resolved "https://registry.yarnpkg.com/serialport/-/serialport-6.2.1.tgz#19add3f70d704c8a6c0707dc5b1bdd1ec31b9852"
   dependencies:
+    "@serialport/parser-byte-length" "^1.0.5"
+    "@serialport/parser-cctalk" "^1.0.5"
+    "@serialport/parser-delimiter" "^1.0.5"
+    "@serialport/parser-readline" "^1.0.5"
+    "@serialport/parser-ready" "^1.0.5"
+    "@serialport/parser-regex" "^1.0.5"
     bindings "1.3.0"
     commander "^2.13.0"
     debug "^3.1.0"
     nan "^2.9.2"
-    parser-byte-length "^1.0.2"
-    parser-cctalk "^1.0.2"
-    parser-delimiter "^1.0.2"
-    parser-readline "^1.0.2"
-    parser-ready "^1.0.2"
-    parser-regex "^1.0.2"
-    prebuild-install "^2.4.1"
+    prebuild-install "^4.0.0"
     promirepl "^1.0.1"
-    prompt-list "^3.1.2"
-    safe-buffer "^5.0.1"
+    prompt-list "^3.2.0"
+    safe-buffer "^5.1.2"
 
 serve-static@^1.13.1:
   version "1.13.2"
@@ -8111,6 +8193,10 @@ single-line-log@^1.1.2:
   resolved "https://registry.yarnpkg.com/single-line-log/-/single-line-log-1.1.2.tgz#c2f83f273a3e1a16edb0995661da0ed5ef033364"
   dependencies:
     string-width "^1.0.1"
+
+sjcl@^1.0.3:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/sjcl/-/sjcl-1.0.7.tgz#32b365a50dc9bba26b88ba3c9df8ea34217d9f45"
 
 slash@^1.0.0:
   version "1.0.0"
@@ -8319,7 +8405,7 @@ stream-each@^1.1.0:
     end-of-stream "^1.1.0"
     stream-shift "^1.0.0"
 
-stream-http@^2.7.2:
+stream-http@^2.3.1, stream-http@^2.7.2:
   version "2.8.3"
   resolved "https://registry.yarnpkg.com/stream-http/-/stream-http-2.8.3.tgz#b2d242469288a5a27ec4fe8933acf623de6514fc"
   dependencies:
@@ -8361,7 +8447,7 @@ string-width@^1.0.1:
     is-fullwidth-code-point "^2.0.0"
     strip-ansi "^4.0.0"
 
-string_decoder@^1.0.0, string_decoder@~1.1.1:
+string_decoder@^1.0.0, string_decoder@^1.0.3, string_decoder@~1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/string_decoder/-/string_decoder-1.1.1.tgz#9cf1611ba62685d7030ae9e4ba34149c3af03fc8"
   dependencies:
@@ -8609,7 +8695,7 @@ timed-out@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/timed-out/-/timed-out-4.0.1.tgz#f32eacac5a175bea25d7fab565ab3ed8741ef56f"
 
-timers-browserify@^2.0.4:
+timers-browserify@^2.0.2, timers-browserify@^2.0.4:
   version "2.0.10"
   resolved "https://registry.yarnpkg.com/timers-browserify/-/timers-browserify-2.0.10.tgz#1d28e3d2aadf1d5a5996c4e9f95601cd053480ae"
   dependencies:
@@ -8920,6 +9006,10 @@ use@^3.1.0:
 utf8-byte-length@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/utf8-byte-length/-/utf8-byte-length-1.0.4.tgz#f45f150c4c66eee968186505ab93fcbb8ad6bf61"
+
+utf8@^2.1.1:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/utf8/-/utf8-2.1.2.tgz#1fa0d9270e9be850d9b05027f63519bf46457d96"
 
 util-deprecate@1.0.2, util-deprecate@~1.0.1:
   version "1.0.2"
