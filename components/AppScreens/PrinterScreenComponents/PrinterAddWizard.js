@@ -8,6 +8,7 @@ import {createSwitchNavigator} from 'react-navigation';
 import Button from '../../GeneralUI/Button';
 
 import styles from '../styles';
+import { isTablet } from 'react-native-device-detection';
 
 import Printing from '../../Utils/Printing';
 
@@ -170,7 +171,7 @@ class PrinterAddWizardSelectType extends Component {
             <View style={{width: '100%', height: '100%'}}>
                 <ProfileGoBack navigation={this.props.navigation} screenName={'Start'} />
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: 450}]}>Primeiro vamos selecionar qual o meio de comunicação com sua impressora</Text>
+                    <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>Primeiro vamos selecionar qual o meio de comunicação com sua impressora</Text>
                     <FlatList
                         style={{width: 300, height: 300, marginTop: 30}}
                         keyExtractor={(item, index) => item.type}
@@ -306,7 +307,7 @@ class PrinterAddWizardSearchPrintersBase extends Component {
     renderLoadingScreen = () => {
         return (
             <View style={{width:'100%', alignItems: 'center', justifyContent: 'space-between'}}>
-                <Text style={[styles.addPrinterWizardHeaderText, {width: 450}]}>Procurando impressoras...</Text>
+                <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>Procurando impressoras...</Text>
 
                 <ActivityIndicator size={Platform.OS == 'ios' ? 'large' : 100} color="#3D6889" style={{marginTop: 50}} />
             </View>
@@ -316,7 +317,7 @@ class PrinterAddWizardSearchPrintersBase extends Component {
     renderFoundPrinters = () => {
         return (
             <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={[styles.addPrinterWizardHeaderText, {width: 450}]}>
+                <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>
                     {this.state.isEnabled ? (
                         this.state.printerList && this.state.printerList.length > 0 ?
                             "Olha só! Encontramos algumas impressoras para o seu dispositivo" :
@@ -549,7 +550,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                 />
 
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: 450}]}>
+                    <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>
                         Informações da impressora
                     </Text>
 
@@ -687,7 +688,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
         return (
             <View style={{width: '100%', height: '100%'}}>
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: 450}]}>Adicionando a impressora...</Text>
+                    <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>Adicionando a impressora...</Text>
 
                     <ActivityIndicator size={Platform.OS == 'ios' ? 'large' : 100} color="#3D6889" style={{marginTop: 50}} />
                 </View>
@@ -699,7 +700,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
         return (
             <View style={{width: '100%', height: '100%'}}>
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center', marginTop: 70}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: 450}]}>Impressora salva com sucesso! Vamos testar?</Text>
+                    <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>Impressora salva com sucesso! Vamos testar?</Text>
 
                     <Button
                         containerStyle={styles.addPrinterWizardButton}
@@ -740,7 +741,8 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                                     ], {
                                         cancelable: false
                                     });
-                                }).catch(() => {
+                                }).catch((e) => {
+                                    console.log(e);
                                     Alert.alert("Opa!", "Tivemos um pequeno problema ao conectar com a impressora, tente novamente!", [
                                         {
                                             text: "Ok!"

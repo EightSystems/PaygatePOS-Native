@@ -3422,6 +3422,20 @@ escodegen@^1.9.0:
     serialport "*"
     usb "*"
 
+"escpos@github:EightSystems/node-escpos#master":
+  version "2.4.9"
+  resolved "https://codeload.github.com/EightSystems/node-escpos/tar.gz/8d2ae846b82b20285c2098d2e46cee66aa264099"
+  dependencies:
+    deep-assign "^2.0.0"
+    iconv-lite "*"
+    mutable-buffer "^2.0.3"
+    table "^4.0.3"
+  optionalDependencies:
+    get-pixels "*"
+    qr-image "*"
+    serialport "*"
+    usb "*"
+
 eslint-plugin-react-native-globals@^0.1.1:
   version "0.1.2"
   resolved "https://registry.yarnpkg.com/eslint-plugin-react-native-globals/-/eslint-plugin-react-native-globals-0.1.2.tgz#ee1348bc2ceb912303ce6bdbd22e2f045ea86ea2"

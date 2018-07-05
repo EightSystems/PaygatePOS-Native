@@ -1,5 +1,7 @@
 import { StyleSheet } from 'react-native';
 
+import { isTablet } from 'react-native-device-detection';
+
 export default StyleSheet.create({
     icon: {
         width: 35,
@@ -35,10 +37,10 @@ export default StyleSheet.create({
     addPrintWizardModal: {
         backgroundColor: 'white',
         flex: 1,
-        marginLeft: 65,
-        marginRight: 65,
-        marginTop: 65,
-        marginBottom: 65,
+        marginLeft: isTablet ? 65 : 5,
+        marginRight: isTablet ? 65 : 5,
+        marginTop: isTablet ? 65 : 5,
+        marginBottom: isTablet ? 65 : 5,
         borderRadius: 5,
         alignItems: 'center',
         justifyContent: 'center'
@@ -47,7 +49,7 @@ export default StyleSheet.create({
         fontWeight: 'bold',
         fontSize: 22,
         color: '#3D6889',
-        width: 350,
+        width: isTablet ? 350 : '100%',
         textAlign: 'center',
         marginBottom: 20
     },
