@@ -117,11 +117,35 @@ export default class Printing {
                     }
 
                     return continuePromise.then(() => {
-                        return deviceImplementation.connect(device).then(() => {
-                            return deviceImplementation.write(buffer).then(() => {
-                                return deviceImplementation.disconnect();
+                        const connectAndWrite = (numberOfTimes) => {
+                            return deviceImplementation.connect(device).then((isConnected) => {
+                                if ( ! isConnected && numberOfTimes <= 3 ) {
+                                    return (new Promise((resolve, reject) => {
+                                        setTimeout(() => {
+                                            resolve()
+                                        }, 100)
+                                    })).then(() => {
+                                        return connectAndWrite(numberOfTimes+1);
+                                    })
+                                }
+                                else if ( ! isConnected ) {
+                                    throw 'Couldnt connect';
+                                }
+                                else {
+                                    return (new Promise((resolve, reject) => {
+                                        setTimeout(() => {
+                                            resolve()
+                                        }, 200)
+                                    })).then(() => {
+                                        return deviceImplementation.write(buffer).then(() => {
+                                            return deviceImplementation.disconnect();
+                                        });
+                                    });
+                                }
                             });
-                        });
+                        }
+
+                        return connectAndWrite(1);
                     });
                 });
             });

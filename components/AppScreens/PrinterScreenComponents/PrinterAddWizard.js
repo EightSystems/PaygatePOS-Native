@@ -741,7 +741,8 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                                     ], {
                                         cancelable: false
                                     });
-                                }).catch(() => {
+                                }).catch((e) => {
+                                    console.log(e);
                                     Alert.alert("Opa!", "Tivemos um pequeno problema ao conectar com a impressora, tente novamente!", [
                                         {
                                             text: "Ok!"
