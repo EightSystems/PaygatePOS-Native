@@ -37,13 +37,6 @@ module.exports = {
     extensions: ['.electron.js', '.web.js', '.js', '.json'],
   },
   plugins: [
-    new webpack.EnvironmentPlugin({
-        NODE_ENV: 'production',
-        HOT: true
-    }),
-    new webpack.DefinePlugin({
-      __DEV__: JSON.stringify(true),
-    }),
     new webpack.NormalModuleReplacementPlugin(/\.(.*)exports\/NativeModules(.*)/, function(resource) {
         resource.request = resource.request.replace(/\.(.*)exports\/NativeModules(.*)/,
             path.resolve(__dirname, `./desktop/NativeModules`)

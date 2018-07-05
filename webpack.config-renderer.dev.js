@@ -8,24 +8,17 @@ module.exports = merge.smart(baseConfig, {
     devtool: 'source-map',
     mode: 'production',
     target: 'electron-renderer',
-    output: {
-        path: path.resolve(__dirname, 'desktop', 'dist'),
-        publicPath: './dist/',
-        filename: 'bundle-prod.js',
-    },
     plugins: [
       new webpack.EnvironmentPlugin({
           NODE_ENV: 'production',
-          HOT: false
+          HOT: true
       }),
       new webpack.DefinePlugin({
-        __DEV__: JSON.stringify(false),
-      }),
+        __DEV__: JSON.stringify(true),
+      })
     ],
     node: {
-        __dirname: false,
-        __filename: false
+      __filename: true,
+      __dirname: true,
     }
 });
-
-console.log(module.exports);
