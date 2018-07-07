@@ -1,5 +1,7 @@
 import {Platform} from 'react-native';
 
+import MarkdownParser from './Implementations/MarkdownParser';
+
 export default class Printing {
     static getSupportedTypes() {
         if ( Platform.OS == "android" ) {
@@ -38,7 +40,8 @@ export default class Printing {
             "elgin_i9": "Impressora Elgin I9",
             "elgin_i7": "Impressora Elgin I7",
             "elgin_rm_22": "Impressora Elgin RM-22",
-            "nitere": "Impressora Nitere Genérica"
+            "nitere": "Impressora Nitere Genérica",
+            "pdf": "Impressora do Sistema"
         }
     }
 
@@ -80,19 +83,7 @@ export default class Printing {
         return Printing.getImplementation(deviceType).connect(device);
     }
 
-    static disconnect(deviceType) {
-        return Printing.getImplementation(deviceType).disconnect();
-    }
-
-    static isConnected(deviceType) {
-        return Printing.getImplementation(deviceType).isConnected();
-    }
-
-    static write(deviceType, buffer) {
-        return Printing.getImplementation(deviceType).write(buffer);
-    }
-
-    static quickWrite(deviceType, device, buffer) {
+    static quickWrite(deviceType, device, mBuffer) {
         const deviceImplementation = Printing.getImplementation(deviceType);
 
         return deviceImplementation.isEnabled().then((isEnabled) => {
@@ -106,48 +97,44 @@ export default class Printing {
             }
 
             return continuePromise.then(() => {
-                return deviceImplementation.isConnected().then((isConnected) => {
-                    var continuePromise;
-
-                    if ( isConnected ) {
-                        continuePromise = deviceImplementation.disconnect();
-                    }
-                    else {
-                        continuePromise = Promise.resolve(true);
-                    }
-
-                    return continuePromise.then(() => {
-                        const connectAndWrite = (numberOfTimes) => {
-                            return deviceImplementation.connect(device).then((isConnected) => {
-                                if ( ! isConnected && numberOfTimes <= 3 ) {
-                                    return (new Promise((resolve, reject) => {
-                                        setTimeout(() => {
-                                            resolve()
-                                        }, 100)
-                                    })).then(() => {
-                                        return connectAndWrite(numberOfTimes+1);
-                                    })
-                                }
-                                else if ( ! isConnected ) {
-                                    throw 'Couldnt connect';
-                                }
-                                else {
-                                    return (new Promise((resolve, reject) => {
-                                        setTimeout(() => {
-                                            resolve()
-                                        }, 200)
-                                    })).then(() => {
-                                        return deviceImplementation.write(buffer).then(() => {
-                                            return deviceImplementation.disconnect();
-                                        });
-                                    });
-                                }
+                const connectAndWrite = (numberOfTimes) => {
+                    return deviceImplementation.connect(device).then((currentDeviceDriver) => {
+                        return (new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                resolve()
+                            }, 200)
+                        })).then(() => {
+                            MarkdownParser.parse(
+                                mBuffer,
+                                device.model == 'pdf' ? 'pdf' : 'escpos',
+                                device.type,
+                                device.model,
+                                currentDeviceDriver
+                            ).then(() => {
+                                return currentDeviceDriver.disconnect();
+                            }).catch(() => {
+                                return currentDeviceDriver.disconnect().then(() => {
+                                    throw 'Failed to write';
+                                });
                             });
+                        });
+                    }).catch((e) => {
+                        if ( numberOfTimes <= 3 ) {
+                            return (new Promise((resolve, reject) => {
+                                setTimeout(() => {
+                                    resolve()
+                                }, 100)
+                            })).then(() => {
+                                return connectAndWrite(numberOfTimes+1);
+                            })
                         }
-
-                        return connectAndWrite(1);
+                        else {
+                            throw e;
+                        }
                     });
-                });
+                }
+
+                return connectAndWrite(1);
             });
         });
     }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import { Text, View, FlatList, Dimensions, Alert } from 'react-native'
+import { Text, View, FlatList, Dimensions, Alert, Platform } from 'react-native'
 import { Icon, ListItem } from 'react-native-elements';
 import { isTablet } from 'react-native-device-detection';
 
@@ -81,7 +81,7 @@ class PrinterScreen extends Component {
                                                         {
                                                             text: 'Não!'
                                                         }
-                                                    ], {
+                                                    ], Platform.OS == "web" ? 'none' : {
                                                         cancelable: true
                                                     });
                                                 }
@@ -95,7 +95,7 @@ class PrinterScreen extends Component {
                                             {
                                                 text: 'Nada'
                                             }
-                                        ], {
+                                        ], Platform.OS == "web" ? 'none' : {
                                             cancelable: true
                                         });
                                     }}

@@ -18,16 +18,4 @@ export default class BluetoothImplementation {
     static connect(device) {
         return Promise.reject();
     }
-
-    static disconnect() {
-        return Promise.reject();
-    }
-
-    static isConnected() {
-        return Promise.reject();
-    }
-
-    static write(buffer) {
-        return Promise.reject();
-    }
 }

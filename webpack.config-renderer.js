@@ -16,18 +16,22 @@ module.exports = {
   },
   module: {
       rules: [
-          {
-              test: /\.js$/,
-              loader: 'babel-loader',
-          },
-          {
-              test: /\.(ttf)$/,
-              loader: 'url-loader'
-          },
-          {
-              test: /\.(png|jpe?g|gif|svg)$/,
-              use: 'url-loader'
-          }
+            {
+                test: /\.js$/,
+                loader: 'babel-loader',
+            },
+            {
+                test: /\.(ttf)$/,
+                loader: 'url-loader'
+            },
+            {
+                test: /\.(png|jpe?g|gif|svg)$/,
+                use: 'url-loader'
+            },
+            {
+                test: /\.node$/,
+                use: 'node-loader'
+            }
       ],
   },
   resolve: {
@@ -41,7 +45,18 @@ module.exports = {
         resource.request = resource.request.replace(/\.(.*)exports\/NativeModules(.*)/,
             path.resolve(__dirname, `./desktop/NativeModules`)
         );
+    }),
+    new webpack.NormalModuleReplacementPlugin(/\.(.*)exports\/Modal(.*)/, function(resource) {
+        resource.request = resource.request.replace(/\.(.*)exports\/Modal(.*)/,
+            path.resolve(__dirname, `./components/Utils/ExtComponents/Modal.web`)
+        );
     })
   ],
   target: 'electron-renderer',
+  externals: {
+      serialport: "serialport",
+      usb: "usb",
+      printer: "printer",
+      "imagemagick-native": "imagemagick_native"
+  }
 }

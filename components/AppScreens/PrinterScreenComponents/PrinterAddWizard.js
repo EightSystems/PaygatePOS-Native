@@ -15,6 +15,19 @@ import Printing from '../../Utils/Printing';
 import { connect } from 'react-redux';
 import {savePrinterAction, printerWizard, updatePrinterAction} from '../../Utils/Redux/Actions/printer';
 
+const printerInstalledText = `# Olá!
+
+Se voce consegue ver essa mensagem é porque **sua impressora** foi conectada com sucesso.
+Ela vai poder imprimir seus pedidos e notas com facilidade agora! Aproveita!
+
+## Informações do sistema:
+
+| Chave | Valor |
+| --- | --- |
+| Sistema operacional: | ${process.platform} |
+| Plataforma React: | ${Platform.OS} |
+`;
+
 mapStateToProps = (state) => {
     return {
         printerList: state.printerReducer.list,
@@ -382,7 +395,7 @@ class PrinterAddWizardSearchPrintersBase extends Component {
                                                         {
                                                             text: 'Não'
                                                         }
-                                                    ], {
+                                                    ], Platform.OS == "web" ? 'none' : {
                                                         cancelable: true
                                                     });
                                                 }
@@ -725,11 +738,15 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                                 Printing.quickWrite(
                                     printerType,
                                     {
-                                        id: this.state.printerId,
+                                        id: printerId,
                                         name: printerName,
+                                        type: this.state.printerType,
+                                        model: this.printerModelsTransformed[
+                                            this.state.printerModel
+                                        ].model,
                                         paired: true
                                     },
-                                    "Sua impressora funciona!\n\n\n"
+                                    printerInstalledText
                                 ).then(() => {
                                     Alert.alert("Oba!", "Parabéns! Sua impressora foi configurada com sucesso!", [
                                         {
@@ -738,16 +755,15 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                                                 this.props.dispatch(printerWizard(false))
                                             }
                                         }
-                                    ], {
+                                    ], Platform.OS == "web" ? 'none' : {
                                         cancelable: false
                                     });
                                 }).catch((e) => {
-                                    console.log(e);
                                     Alert.alert("Opa!", "Tivemos um pequeno problema ao conectar com a impressora, tente novamente!", [
                                         {
                                             text: "Ok!"
                                         }
-                                    ], {
+                                    ], Platform.OS == "web" ? 'none' : {
                                         cancelable: false
                                     });
                                 });

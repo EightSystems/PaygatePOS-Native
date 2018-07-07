@@ -2,6 +2,24 @@ import { Platform } from 'react-native';
 
 import BluetoothSerial from 'react-native-bluetooth-serial'
 
+class BluetoothDriver {
+    constructor() {
+        //Bluetooth only handles one at a time
+    }
+
+    disconnect() {
+        return BluetoothSerial.disconnect();
+    }
+
+    isConnected() {
+        return BluetoothSerial.isConnected();
+    }
+
+    write(buffer) {
+        return BluetoothSerial.write(buffer);
+    }
+}
+
 export default class BluetoothImplementation {
     static listDevices() {
         if ( Platform.os == "android" ) {
@@ -58,29 +76,29 @@ export default class BluetoothImplementation {
 
     static connect(device) {
         if ( device.paired ) {
-            return BluetoothSerial.connect(device.id);
+            return BluetoothSerial.connect(device.id).then((isConnected) => {
+                if ( ! isConnected ) {
+                    throw 'Error connecting';
+                }
+
+                return new BluetoothDriver();
+            });
         }
         else {
             return BluetoothSerial.pairDevice(device.id).then((paired) => {
                 if ( paired ) {
-                    return BluetoothSerial.connect(device.id);
+                    return BluetoothSerial.connect(device.id).then(() => {
+                        if ( ! isConnected ) {
+                            throw 'Error connecting';
+                        }
+
+                        return new BluetoothDriver();
+                    });
                 }
                 else {
                     throw "Device pair error";
                 }
             });
         }
-    }
-
-    static disconnect() {
-        return BluetoothSerial.disconnect();
-    }
-
-    static isConnected() {
-        return BluetoothSerial.isConnected();
-    }
-
-    static write(buffer) {
-        return BluetoothSerial.write(buffer);
     }
 }
