@@ -19,6 +19,12 @@ export function listReportsAction() {
     };
 }
 
+export function clearReportDataAction() {
+    return {
+        type: types.CLEAR_REPORT_DATA_ACTION,
+    };
+}
+
 export function getReportDataAction(reportFilterData) {
     return {
         type: types.GET_REPORT_DATA_ACTION,

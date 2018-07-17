@@ -3,6 +3,7 @@ package com.paygatepos;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.horcrux.svg.SvgPackage;
 import com.rnfs.RNFSPackage;
 import com.rusel.RCTBluetoothSerial.RCTBluetoothSerialPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
@@ -40,7 +41,9 @@ public class MainApplication extends Application implements ReactApplication {
             new AppCenterReactNativeAnalyticsPackage(MainApplication.this, getResources().getString(R.string.appCenterAnalytics_whenToEnableAnalytics)),
             new AppCenterReactNativePackage(MainApplication.this),
             new VectorIconsPackage(),
-            new LinearGradientPackage()
+            new LinearGradientPackage(),
+            new DetectHardwarePackage(),
+            new SvgPackage()
       );
     }
 

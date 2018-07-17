@@ -1,10 +1,14 @@
 import * as types from '../consts'
 
-import {PixelRatio} from 'react-native';
+import {PixelRatio, Platform} from 'react-native';
 
 export default function windowReducer(state = {}, action) {
     switch (action.type) {
         case types.DIMENSIONS_CHANGE_ACTION:
+            const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
+            const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
+            const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
+
             const pixelDensity = PixelRatio.get();
             var isTablet = isPhone = false;
             var adjustedWidth = action.window.width * pixelDensity;
@@ -26,7 +30,8 @@ export default function windowReducer(state = {}, action) {
                 window: action.window,
                 screen: action.screen,
                 isTablet,
-                isPhone
+                isPhone,
+                headerHeight: APPBAR_HEIGHT + STATUSBAR_HEIGHT
             };
         break;
         default:

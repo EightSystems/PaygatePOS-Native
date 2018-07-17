@@ -5,7 +5,6 @@
 	};
 	objectVersion = 46;
 	objects = {
-
 /* Begin PBXBuildFile section */
 		00C302E51ABCBA2D00DB3ED1 /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302AC1ABCB8CE00DB3ED1 /* libRCTActionSheet.a */; };
 		00C302E71ABCBA2D00DB3ED1 /* libRCTGeolocation.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 00C302BA1ABCB90400DB3ED1 /* libRCTGeolocation.a */; };
@@ -59,6 +58,7 @@
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8AA872E7F24C4B48851BEDAA /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AE1CE7CA9D9441AA92E3115C /* Lato-Thin.ttf */; };
 		8C0BEF53515B4ACDA829B082 /* libAppCenterReactNative.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 302431F6AF79468D973F0BE1 /* libAppCenterReactNative.a */; };
+		9886441702C5B3F0D71E5FFA /* libPods-PaygatePOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = DE0F31CF826B38C994D08E0D /* libPods-PaygatePOS.a */; };
 		A5FD475702604521809203F9 /* libPods-PaygatePOS-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 976BAFFC9443289AE52B2F24 /* libPods-PaygatePOS-tvOSTests.a */; };
 		A945CF71DFBC498C9043AF51 /* Feather.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 26C372A63E3F4E73B55090C8 /* Feather.ttf */; };
 		ACD143DAAC7B4C64AA408FCC /* Lato-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0854C09619A44275BB62A372 /* Lato-Medium.ttf */; };
@@ -452,6 +452,7 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = PaygatePOS/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = PaygatePOS/main.m; sourceTree = "<group>"; };
 		146833FF1AC3E56700842450 /* React.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = React.xcodeproj; path = "../node_modules/react-native/React/React.xcodeproj"; sourceTree = "<group>"; };
+		158C785883C2C5019FB88C60 /* Pods-PaygatePOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS/Pods-PaygatePOS.release.xcconfig"; sourceTree = "<group>"; };
 		1F8EA041F26C4D47B83F1E13 /* EvilIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = EvilIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/EvilIcons.ttf"; sourceTree = "<group>"; };
 		200AFF7220EB0AFC007DC77D /* RNI18n.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RNI18n.xcodeproj; path = "../node_modules/react-native-i18n/ios/RNI18n.xcodeproj"; sourceTree = "<group>"; };
 		20B78A3520E43E9B00E1F79D /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
@@ -503,8 +504,7 @@
 		E39C4E37A03B47B3BDBFB257 /* RCTBluetoothSerial.xcodeproj */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = "wrapper.pb-project"; name = RCTBluetoothSerial.xcodeproj; path = "../node_modules/react-native-bluetooth-serial/ios/RCTBluetoothSerial.xcodeproj"; sourceTree = "<group>"; };
 		E61AEE7F1C1743548434C6F8 /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		E9E66EBF56894C7E8AFA5C34 /* libRNVectorIcons.a */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = archive.ar; path = libRNVectorIcons.a; sourceTree = "<group>"; };
-		EDE0389D77A81EC5E5A19E9E /* Pods-PaygatePOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS/Pods-PaygatePOS.release.xcconfig"; sourceTree = "<group>"; };
-		EE37DB2F9589FB75D9F54437 /* Pods-PaygatePOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS/Pods-PaygatePOS.debug.xcconfig"; sourceTree = "<group>"; };
+		EE9975CA55F778B8295E0497 /* Pods-PaygatePOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS/Pods-PaygatePOS.debug.xcconfig"; sourceTree = "<group>"; };
 		EEE3768D0F604712909847D1 /* Lato-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-MediumItalic.ttf"; path = "../assets/fonts/Lato-MediumItalic.ttf"; sourceTree = "<group>"; };
 		F925DB6B4DBBB65BDB9D70AF /* Pods-PaygatePOS-tvOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PaygatePOS-tvOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PaygatePOS-tvOSTests/Pods-PaygatePOS-tvOSTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -543,6 +543,7 @@
 				D923B19BC77247A9A3CED69D /* libAppCenterReactNativeAnalytics.a in Frameworks */,
 				0F6A3559C5BF4598981A9125 /* libAppCenterReactNativeCrashes.a in Frameworks */,
 				1C863CDE0B624A96B15B8712 /* libRCTBluetoothSerial.a in Frameworks */,
+				9886441702C5B3F0D71E5FFA /* libPods-PaygatePOS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -912,12 +913,12 @@
 		FB5CA00CC5455357C395CC47 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				EE37DB2F9589FB75D9F54437 /* Pods-PaygatePOS.debug.xcconfig */,
-				EDE0389D77A81EC5E5A19E9E /* Pods-PaygatePOS.release.xcconfig */,
 				351E81F747F909658220D2B0 /* Pods-PaygatePOS-tvOS.debug.xcconfig */,
 				01C305EBB2435A04CD4779F0 /* Pods-PaygatePOS-tvOS.release.xcconfig */,
 				2C2AE963B4069418A40D5ED1 /* Pods-PaygatePOS-tvOSTests.debug.xcconfig */,
 				F925DB6B4DBBB65BDB9D70AF /* Pods-PaygatePOS-tvOSTests.release.xcconfig */,
+				EE9975CA55F778B8295E0497 /* Pods-PaygatePOS.debug.xcconfig */,
+				158C785883C2C5019FB88C60 /* Pods-PaygatePOS.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -1772,7 +1773,6 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE37DB2F9589FB75D9F54437 /* Pods-PaygatePOS.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -1811,7 +1811,6 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDE0389D77A81EC5E5A19E9E /* Pods-PaygatePOS.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -1847,7 +1846,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EE37DB2F9589FB75D9F54437 /* Pods-PaygatePOS.debug.xcconfig */;
+			baseConfigurationReference = EE9975CA55F778B8295E0497 /* Pods-PaygatePOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1880,7 +1879,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EDE0389D77A81EC5E5A19E9E /* Pods-PaygatePOS.release.xcconfig */;
+			baseConfigurationReference = 158C785883C2C5019FB88C60 /* Pods-PaygatePOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CURRENT_PROJECT_VERSION = 1;
@@ -2002,7 +2001,7 @@
 		};
 		2D02E4991E0B4A5E006451C7 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 351E81F747F909658220D2B0 /* Pods-PaygatePOS-tvOS.debug.xcconfig */;
+			baseConfigurationReference = 2C2AE963B4069418A40D5ED1 /* Pods-PaygatePOS-tvOSTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NONNULL = YES;

@@ -1,9 +1,16 @@
 import React, {PureComponent} from 'react';
-import { View, Text } from 'react-native';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+import { View, Text, FlatList } from 'react-native';
+
+import { Table, Row, Rows, TableWrapper } from 'react-native-table-component';
 
 import { Grid as GraphGrid, LineChart, XAxis, YAxis } from 'react-native-svg-charts'
 import HTML from 'react-native-render-html';
+
+class InternalRow extends PureComponent {
+    render() {
+        return <Row {...this.props}/>
+    }
+}
 
 export default class ReportDataView extends PureComponent {
     renderGraph(graphData) {
@@ -55,82 +62,88 @@ export default class ReportDataView extends PureComponent {
         );
     }
 
-    renderTable(tableData) {
+    renderTable(tableData, hasGraph) {
         if ( this.props.invertedAxis && tableData ) {
-            return this.renderTableInverted(tableData);
+            return this.renderTableInverted(tableData, hasGraph);
         }
         else {
             if ( tableData.length > 0 ) {
-                return this.renderTableNormal(tableData);
+                return this.renderTableNormal(tableData, hasGraph);
             }
         }
 
         return null;
     }
 
-    renderTableInverted(tableData) {
+    renderTableInverted(tableData, hasGraph) {
         return (
-            <Grid>
-                {
-                    Object.keys(tableData).map((tableKey, itemIndex) => {
+            <View>
+                <FlatList horizontal={false}
+                    style={{height: (hasGraph ? this.props.height - 200 : this.props.height) - 60}}
+                    data={
+                        Object.keys(tableData).map((tableKey, itemIndex) => {
+                            return [
+                                tableKey,
+                                tableData[tableKey] instanceof Object ? null : tableData[tableKey]
+                            ];
+                        })
+                    }
+                    keyExtractor={(item, index) =>  `table-${index}`}
+                    showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({item}) => {
                         return (
-                            <Row key={`table-item-${itemIndex}`}>
-                                <Col key={`table-item-${itemIndex}-key`}>
-                                    <HTML html={`<b>${tableKey}</b>`}/>
-                                </Col>
-                                <Col key={`table-item-${itemIndex}-value`}>
-                                    <HTML html={tableData[tableKey]}/>
-                                </Col>
-                            </Row>
-                        );
-                    })
-                }
-            </Grid>
+                            <InternalRow data={item}/>
+                        )
+                    }}
+                />
+            </View>
         )
     }
 
-    renderTableNormal(tableData) {
+    renderTableNormal(tableData, hasGraph) {
         let tableHeaders = Object.keys(tableData[0]);
 
         return (
-            <Grid>
-                <Row>
-                    {
-                        tableHeaders.map((tableHeader) => {
-                            return (
-                                <Col key={tableHeader}><Text style={{fontWeight: 'bold'}}>{tableHeader}</Text></Col>
-                            );
+            <View>
+                <Row data={
+                    tableHeaders.map((tableHeader) => {
+                        return (
+                            <Text style={{fontWeight: 'bold'}}>{tableHeader}</Text>
+                        );
+                    })
+                }/>
+
+                <FlatList horizontal={false}
+                    style={{height: (hasGraph ? this.props.height - 200 : this.props.height) - 60}}
+                    data={
+                        tableData.map((tableItem, itemIndex) => {
+                            return Object.values(tableItem).map((tableColData, colDataIndex) => {
+                                    return tableColData;
+                            })
                         })
                     }
-                </Row>
-
-                {
-                    tableData.map((tableItem, itemIndex) => {
+                    keyExtractor={(item, index) =>  `table-${index}`}
+                    showsVerticalScrollIndicator={false}
+                    showsHorizontalScrollIndicator={false}
+                    renderItem={({item}) => {
                         return (
-                            <Row key={`table-item-${itemIndex}`} style={{marginBottom: 1, borderBottomWidth: 1, borderBottomColor: 'black'}}>
-                                {
-                                    Object.values(tableItem).map((tableColData, colDataIndex) => {
-                                        return (
-                                            <Col key={`table-item-${itemIndex}-${colDataIndex}`}><HTML html={tableColData}/></Col>
-                                        );
-                                    })
-                                }
-                            </Row>
+                            <InternalRow data={item}/>
                         )
-                    })
-                }
-            </Grid>
+                    }}
+                />
+        </View>
         )
     }
 
     render() {
         return (
-            <View>
+            <View style={{height: this.props.height}}>
                 {this.props.data.graph ? this.renderGraph(this.props.data.graph) : null}
 
                 {this.props.data.graph ?
-                    (this.props.data.table ? this.renderTable(this.props.data.table) : null) :
-                    (this.props.data ? this.renderTable(this.props.data) : null)
+                    (this.props.data.table ? this.renderTable(this.props.data.table, true) : null) :
+                    (this.props.data ? this.renderTable(this.props.data, false) : null)
                 }
             </View>
         )

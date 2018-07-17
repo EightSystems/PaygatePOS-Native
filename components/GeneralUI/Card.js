@@ -9,9 +9,7 @@ export default class POSCard extends PureComponent {
             <Card
                 containerStyle={
                     {
-                        paddingTop: 0,
-                        paddingLeft: 0,
-                        paddingRight: 0,
+                        padding: 0,
                         backgroundColor: '#fbfbfb',
                         borderColor: '#cdcdcd',
                         borderWidth: 1,
@@ -20,7 +18,7 @@ export default class POSCard extends PureComponent {
                 }
                 style={this.props.style} title={
                 (
-                    <View style={{flex: 1, alignItems: 'center', flexDirection: 'row', backgroundColor: '#eaeaea', borderBottomWidth: 1, borderBottomColor: '#CDCDCD', paddingTop: 5, paddingLeft: 5, paddingRight: 5, paddingBottom: 5}}>
+                    <View style={{flex: 1, minHeight: 40, alignItems: 'center', flexDirection: 'row', backgroundColor: '#eaeaea', borderBottomWidth: 1, borderBottomColor: '#CDCDCD', paddingTop: 5, paddingLeft: 5, marginLeft: 0, paddingRight: 5, paddingBottom: 5}}>
                         <Icon name={this.props.icon} type="font-awesome"/>
                         <Text style={{fontWeight: 'bold', marginLeft: 5}}>{this.props.title}</Text>
                     </View>

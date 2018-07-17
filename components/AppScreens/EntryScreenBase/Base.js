@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import { View, Text, Image, StyleSheet, ScrollView, Platform, ImageBackground } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, Platform, ImageBackground, ActivityIndicator } from 'react-native';
 import {Header as ElementHeader} from 'react-native-elements';
 
 import { createDrawerNavigator, createStackNavigator, createSwitchNavigator, DrawerActions, SafeAreaView, NavigationActions } from 'react-navigation';
@@ -34,16 +34,17 @@ getBackgroundComponent = (Component) => {
 
         render () {
             return (
-                <ImageBackground
+                <View
                     style={{
                         height: this.props.height - (APPBAR_HEIGHT + STATUSBAR_HEIGHT),
-                        width: this.props.isTablet ? this.props.width - 70 : this.props.width
-                    }} source={require('../../../resources/bg.png')} resizeMode="repeat">
+                        width: this.props.isTablet ? this.props.width - 70 : this.props.width,
+                        backgroundColor: 'rgb(239, 239, 239)'
+                    }}>
                     <Component {...this.props} style={{
                         height: this.props.height - (APPBAR_HEIGHT + STATUSBAR_HEIGHT),
                         width: this.props.isTablet ? this.props.width - 70 : this.props.width
                     }}/>
-                </ImageBackground>
+                </View>
             )
         }
     }
@@ -102,8 +103,11 @@ const getRootStack = (isTablet, initialScreen) => {
 
                     if (state.routes[ state.index ].key !== 'DrawerClose') {
                         return {
-                            headerStyle: {backgroundColor: 'white'},
-                            headerLeft: (<Icon name="bars" type="font-awesome" containerStyle={{marginLeft: 5}} onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} size={30}/>),
+                            headerStyle: {
+                                backgroundColor: '#11161a',
+                                borderBottomColor: 'rgba(10,13,14,0.8)'
+                            },
+                            headerLeft: (<Icon name="bars" type="font-awesome" color={'white'} containerStyle={{marginLeft: 5}} onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} size={30}/>),
                         }
                     }
                     else {
@@ -145,12 +149,13 @@ class Base extends Component {
                     placement="left"
                     leftComponent={
                         <View style={{width: 50, alignItems: 'center', justifyContent: 'center'}}>
-                            <Icon name="bars" type="font-awesome" containerStyle={{marginLeft: 5}} size={30}/>
+                            <Icon name="bars" type="font-awesome" color={'white'} containerStyle={{marginLeft: 5}} size={30}/>
                         </View>
                     }
-                    backgroundColor={'white'}
+                    backgroundColor={'#11161a'}
                     outerContainerStyles={{
-                        height: APPBAR_HEIGHT + STATUSBAR_HEIGHT
+                        height: APPBAR_HEIGHT + STATUSBAR_HEIGHT,
+                        borderBottomColor: 'rgba(10,13,14,0.8)'
                     }}
                 />
 
@@ -167,9 +172,16 @@ class Base extends Component {
                                         })
                                     }
                                     renderIcon={(scene) => {
-                                        if ( screenList[scene.route.key] !== undefined ) {
-                                            if ( screenList[scene.route.key].screen.navigationOptions && screenList[scene.route.key].screen.navigationOptions.drawerIcon ) {
-                                                return screenList[scene.route.key].screen.navigationOptions.drawerIcon(scene);
+                                        if ( this.state.currentPageLoading == scene.route.key ) {
+                                            return (
+                                                <ActivityIndicator color={"white"}/>
+                                            )
+                                        }
+                                        else {
+                                            if ( screenList[scene.route.key] !== undefined ) {
+                                                if ( screenList[scene.route.key].screen.navigationOptions && screenList[scene.route.key].screen.navigationOptions.drawerIcon ) {
+                                                    return screenList[scene.route.key].screen.navigationOptions.drawerIcon(scene);
+                                                }
                                             }
                                         }
 
@@ -195,9 +207,11 @@ class Base extends Component {
                                     onItemPress={({route, focused}) => {
                                         if ( Base.navigatorRef && ! focused ) {
                                             this.setState({
-                                                currentPage: route.key
+                                                currentPageLoading: route.key
                                             }, () => {
-                                                Base.navigatorRef.dispatch(NavigationActions.navigate({ routeName: route.key }))
+                                                setTimeout(() => {
+                                                    Base.navigatorRef.dispatch(NavigationActions.navigate({ routeName: route.key }))
+                                                }, 100)
                                             })
                                         }
                                     }}
@@ -213,7 +227,8 @@ class Base extends Component {
                         onNavigationStateChange={(prevState, currentState) => {
                             if ( prevState.index !== currentState.index ) {
                                 this.setState({
-                                    currentPage: currentState.routes[currentState.index].routeName
+                                    currentPage: currentState.routes[currentState.index].routeName,
+                                    currentPageLoading: null
                                 })
                             }
                         }}

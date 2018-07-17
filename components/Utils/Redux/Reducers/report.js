@@ -1,7 +1,32 @@
+import {Platform} from 'react-native';
+
 import * as types from '../consts'
 
 export default function reportReducer(state = {}, action) {
     switch (action.type) {
+        case types.CLEAR_REPORT_DATA_ACTION:
+            if ( Platform.OS == "web" ) {
+                return {
+                    ...state,
+                    selected: null,
+                    data: null,
+                    selectedLoaded: false,
+                    selectedError: false
+                };
+            }
+            else {
+                return {
+                    ...state,
+                    types: null,
+                    loaded: false,
+                    error: false,
+                    selected: null,
+                    data: null,
+                    selectedLoaded: false,
+                    selectedError: false
+                };
+            }
+        break;
         case types.LIST_REPORTS_ACTION:
             return {
                 ...state,

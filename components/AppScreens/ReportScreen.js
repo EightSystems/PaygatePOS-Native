@@ -44,7 +44,7 @@ class ReportScreen extends Component {
 
     render() {
         return (
-            <View style={this.props.style}>
+            <View style={[this.props.style]}>
                 {
                     this.props.reportTypes ?
                         this.renderReportTypes() :
