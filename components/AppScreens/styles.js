@@ -1,8 +1,6 @@
 import { StyleSheet } from 'react-native';
 
-import { isTablet } from 'react-native-device-detection';
-
-export default StyleSheet.create({
+export default (isTablet) => StyleSheet.create({
     icon: {
         width: 35,
         height: 35,
@@ -47,7 +45,7 @@ export default StyleSheet.create({
     },
     addPrinterWizardHeaderText: {
         fontWeight: 'bold',
-        fontSize: 22,
+        fontSize: 20,
         color: '#3D6889',
         width: isTablet ? 350 : '100%',
         textAlign: 'center',

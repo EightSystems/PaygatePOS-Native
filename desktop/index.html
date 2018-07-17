@@ -34,9 +34,20 @@
     </script>
 
     <script>
+        window.Browser = {
+            T: function () {
+
+            }
+        };
+
         window.serialport = require('serialport');
         window.usb = require('usb');
         window.printer = require('printer');
+        window.fontkit = require('fontkit');
+
+        if ( process.platform == 'win32' ) {
+            window['graphicsmagick-static'] = require('graphicsmagick-static');
+        }
     </script>
 </body>
 </html>

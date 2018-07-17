@@ -112,9 +112,9 @@ export default class Printing {
                                 currentDeviceDriver
                             ).then(() => {
                                 return currentDeviceDriver.disconnect();
-                            }).catch(() => {
+                            }).catch((e) => {
                                 return currentDeviceDriver.disconnect().then(() => {
-                                    throw 'Failed to write';
+                                    throw e;
                                 });
                             });
                         });

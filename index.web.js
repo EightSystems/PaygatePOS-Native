@@ -1,4 +1,6 @@
 import { AppRegistry } from 'react-native';
+
+import MaterialIcons from 'react-native-vector-icons/Fonts/MaterialIcons.ttf';
 import Octicons from 'react-native-vector-icons/Fonts/Octicons.ttf';
 import Fontawesome from 'react-native-vector-icons/Fonts/FontAwesome.ttf';
 import Feather from 'react-native-vector-icons/Fonts/Feather.ttf';
@@ -18,6 +20,7 @@ const fontsToEmbed = {
     "Lato-Bold": LatoBold,
     "Lato-Medium": LatoMedium,
     "Lato-Regular": LatoRegular,
+    "Material Icons": MaterialIcons
 }
 
 Object.keys(fontsToEmbed).map((fontName) => {

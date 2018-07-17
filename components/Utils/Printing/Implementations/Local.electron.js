@@ -1,5 +1,5 @@
 import printer from 'printer';
-import iconv from 'iconv-lite';
+import GraphicsMagick from 'gm';
 
 import ConsoleAdapter from 'escpos/adapter/console';
 
@@ -22,17 +22,34 @@ class LocalDriver {
             return new Promise((resolve, reject) => {
                 if ( this.currentPrinterModel == 'pdf' ) {
                     if ( process.platform == 'win32' ) {
-                        printer.printDirect({
-                            data: iconv.encode(hBuffer, 'utf8'),
-                            type: 'TEXT',
-                            printer: this.currentPrinterName,
-                            success: (jobID) => {
-                                resolve(true);
-                            },
-                            error: (err) => {
-                                reject(err);
-                            }
-                        });
+                        try {
+                            var graphicsmagick = require("graphicsmagick-static");
+
+                            const gm = GraphicsMagick.subClass({
+                                appPath: path.join(graphicsmagick.path, "/").replace(".asar", ".asar.unpacked")
+                            });
+
+                            gm(hBuffer, 'document.pdf').toBuffer('EMF', (err, emfBuffer) => {
+                                if ( err ) {
+                                    reject(err);
+                                }
+                                else {
+                                    printer.printDirect({
+                                        data: emfBuffer,
+                                        type: 'EMF',
+                                        printer: this.currentPrinterName,
+                                        success: (jobID) => {
+                                            resolve(true);
+                                        },
+                                        error: (err) => {
+                                            reject(err);
+                                        }
+                                    });
+                                }
+                            });
+                        } catch(e) {
+                            reject(e.toString());
+                        }
                     }
                     else {
                         printer.printDirect({
@@ -43,6 +60,7 @@ class LocalDriver {
                                 resolve(true);
                             },
                             error: (err) => {
+                                console.log(err);
                                 reject(err);
                             }
                         });

@@ -37,6 +37,7 @@ module.exports = {
   resolve: {
     alias: {
       'react-native': 'react-native-electron',
+      'react-native-svg': 'react-native-svg-web'
     },
     extensions: ['.electron.js', '.web.js', '.js', '.json'],
   },
@@ -45,6 +46,14 @@ module.exports = {
         resource.request = resource.request.replace(/\.(.*)exports\/NativeModules(.*)/,
             path.resolve(__dirname, `./desktop/NativeModules`)
         );
+    }),
+    new webpack.NormalModuleReplacementPlugin(/(.*)react-native\/Libraries(.*)/, function(resource) {
+        if ( resource.request.indexOf('Components/View') ) {
+            resource.request = path.resolve(__dirname, `./node_modules/react-native-web/src/exports/View/ViewStylePropTypes`);
+        }
+        else {
+            resource.request = path.resolve(__dirname, `./node_modules/react-native-web/src/exports/${resource.request.replace('react-native/Libraries/', '')}`);
+        }
     }),
     new webpack.NormalModuleReplacementPlugin(/\.(.*)exports\/Modal(.*)/, function(resource) {
         resource.request = resource.request.replace(/\.(.*)exports\/Modal(.*)/,
@@ -57,6 +66,8 @@ module.exports = {
       serialport: "serialport",
       usb: "usb",
       printer: "printer",
-      "imagemagick-native": "imagemagick_native"
+      fsevents: "fsevents",
+      "graphicsmagick-static": "graphicsmagick-static",
+      "fontkit": "fontkit"
   }
 }

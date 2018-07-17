@@ -9,16 +9,17 @@ module.exports = merge.smart(baseConfig, {
     mode: 'production',
     target: 'electron-renderer',
     plugins: [
-      new webpack.EnvironmentPlugin({
-          NODE_ENV: 'production',
-          HOT: true
-      }),
-      new webpack.DefinePlugin({
-        __DEV__: JSON.stringify(true),
-      })
+        new webpack.EnvironmentPlugin({
+            NODE_ENV: 'production',
+            HOT: true
+        }),
+        new webpack.DefinePlugin({
+            __DEV__: JSON.stringify(true),
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     node: {
-      __filename: true,
-      __dirname: true,
+        __filename: true,
+        __dirname: true,
     }
 });

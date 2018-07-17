@@ -5,8 +5,6 @@ import { connect } from 'react-redux';
 import { View, Text, Image, StyleSheet, ScrollView } from 'react-native';
 import { Icon } from 'react-native-elements';
 
-import styles from './styles';
-
 class InfoScreen extends Component {
     static navigationOptions = {
         drawerLabel: () => {

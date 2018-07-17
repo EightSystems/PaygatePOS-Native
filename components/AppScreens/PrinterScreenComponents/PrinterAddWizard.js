@@ -7,15 +7,15 @@ import {createSwitchNavigator} from 'react-navigation';
 
 import Button from '../../GeneralUI/Button';
 
-import styles from '../styles';
-import { isTablet } from 'react-native-device-detection';
+import getStyle from '../styles';
 
 import Printing from '../../Utils/Printing';
 
 import { connect } from 'react-redux';
 import {savePrinterAction, printerWizard, updatePrinterAction} from '../../Utils/Redux/Actions/printer';
 
-const printerInstalledText = `# Olá!
+const printerInstalledText = `![PayGate](https://paygatepos.com/images/logo-eight.jpg)
+# Olá!
 
 Se voce consegue ver essa mensagem é porque **sua impressora** foi conectada com sucesso.
 Ela vai poder imprimir seus pedidos e notas com facilidade agora! Aproveita!
@@ -34,11 +34,25 @@ mapStateToProps = (state) => {
         printerLoading: state.printerReducer.loading,
         printerAdded: state.printerReducer.added,
         printerEditingData: state.printerReducer.editData,
-        printerEditingIndex: state.printerReducer.editIndex
+        printerEditingIndex: state.printerReducer.editIndex,
+        isTablet: state.windowReducer.isTablet,
+        width: state.windowReducer.window.width
     }
 }
 
 class ProfileGoBack extends Component {
+    constructor(props) {
+        super(props);
+
+        this.style = getStyle(props.isTablet);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if ( nextProps.isTablet !== this.props.isTablet ) {
+            this.style = getStyle(nextProps.isTablet);
+        }
+    }
+
     render() {
         return (
             <View style={{flexDirection: 'row', width: '100%'}}>
@@ -54,7 +68,7 @@ class ProfileGoBack extends Component {
                         title={
                             "Voltar"
                         }
-                        titleStyle={styles.addPrinterWizardButtonTitle}
+                        titleStyle={this.style.addPrinterWizardButtonTitle}
                         onPress={() => {
                             if ( this.props.leftPressed ) {
                                 this.props.leftPressed();
@@ -73,7 +87,7 @@ class ProfileGoBack extends Component {
                             title={
                                 this.props.rightButton
                             }
-                            titleStyle={styles.addPrinterWizardButtonTitle}
+                            titleStyle={this.style.addPrinterWizardButtonTitle}
                             onPress={this.props.rightPressed}
                         />
                     </View>
@@ -86,6 +100,18 @@ class ProfileGoBack extends Component {
 export { ProfileGoBack };
 
 class PrinterAddWizardStartBase extends Component {
+    constructor(props) {
+        super(props);
+
+        this.style = getStyle(props.isTablet);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if ( nextProps.isTablet !== this.props.isTablet ) {
+            this.style = getStyle(nextProps.isTablet);
+        }
+    }
+
     componentWillMount() {
         if ( this.props.printerEditingIndex !== null && this.props.printerEditingIndex !== undefined ) {
             this.props.navigation.navigate('AddPrinterInformation', {
@@ -103,11 +129,11 @@ class PrinterAddWizardStartBase extends Component {
                     this.props.dispatch(printerWizard(false));
                 }}/>
                 <View style={{alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={styles.addPrinterWizardHeaderText}>Bem-vindo ao assistente de configuração para impressoras</Text>
-                    <Icon name="printer" type="feather" size={250} iconStyle={styles.addPrinterWizardIcon}/>
+                    <Text style={this.style.addPrinterWizardHeaderText}>Bem-vindo ao assistente de configuração para impressoras</Text>
+                    <Icon name="printer" type="feather" size={250} iconStyle={this.style.addPrinterWizardIcon}/>
                     <Button
-                        containerStyle={styles.addPrinterWizardButton}
-                        buttonStyle={styles.addPrinterWizardButtonInternal}
+                        containerStyle={this.style.addPrinterWizardButton}
+                        buttonStyle={this.style.addPrinterWizardButtonInternal}
                         iconRight
                         icon={{
                             name: 'arrow-right',
@@ -118,7 +144,7 @@ class PrinterAddWizardStartBase extends Component {
                         title={
                             "Vamos lá!"
                         }
-                        titleStyle={styles.addPrinterWizardButtonTitle}
+                        titleStyle={this.style.addPrinterWizardButtonTitle}
                         onPress={() => this.props.navigation.navigate('SelectType')}
                     />
                 </View>
@@ -136,7 +162,16 @@ class PrinterAddWizardSelectType extends Component {
         this.state = {
             supportedTypes: Printing.getSupportedTypes()
         }
+
+        this.style = getStyle(props.isTablet);
     }
+
+    componentWillReceiveProps(nextProps) {
+        if ( nextProps.isTablet !== this.props.isTablet ) {
+            this.style = getStyle(nextProps.isTablet);
+        }
+    }
+
 
     static getPrinterIcon (deviceType) {
         if ( deviceType == "usb" ) {
@@ -184,7 +219,7 @@ class PrinterAddWizardSelectType extends Component {
             <View style={{width: '100%', height: '100%'}}>
                 <ProfileGoBack navigation={this.props.navigation} screenName={'Start'} />
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>Primeiro vamos selecionar qual o meio de comunicação com sua impressora</Text>
+                    <Text style={[this.style.addPrinterWizardHeaderText, {width: this.props.isTablet ? 450 : '100%'}]}>Primeiro vamos selecionar qual o meio de comunicação com sua impressora</Text>
                     <FlatList
                         style={{width: 300, height: 300, marginTop: 30}}
                         keyExtractor={(item, index) => item.type}
@@ -232,7 +267,16 @@ class PrinterAddWizardSearchPrintersBase extends Component {
         }
 
         this.printerImplentation = null;
+
+        this.style = getStyle(props.isTablet);
     }
+
+    componentWillReceiveProps(nextProps) {
+        if ( nextProps.isTablet !== this.props.isTablet ) {
+            this.style = getStyle(nextProps.isTablet);
+        }
+    }
+
 
     componentDidMount() {
         const printerType = this.props.navigation.getParam('type');
@@ -320,7 +364,7 @@ class PrinterAddWizardSearchPrintersBase extends Component {
     renderLoadingScreen = () => {
         return (
             <View style={{width:'100%', alignItems: 'center', justifyContent: 'space-between'}}>
-                <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>Procurando impressoras...</Text>
+                <Text style={[this.style.addPrinterWizardHeaderText, {width: this.props.isTablet ? 450 : '100%'}]}>Procurando impressoras...</Text>
 
                 <ActivityIndicator size={Platform.OS == 'ios' ? 'large' : 100} color="#3D6889" style={{marginTop: 50}} />
             </View>
@@ -330,7 +374,7 @@ class PrinterAddWizardSearchPrintersBase extends Component {
     renderFoundPrinters = () => {
         return (
             <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>
+                <Text style={[this.style.addPrinterWizardHeaderText, {width: this.props.isTablet ? 450 : '100%'}]}>
                     {this.state.isEnabled ? (
                         this.state.printerList && this.state.printerList.length > 0 ?
                             "Olha só! Encontramos algumas impressoras para o seu dispositivo" :
@@ -466,6 +510,13 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                     label: 'Cancelar'
                 }]
             );
+        this.style = getStyle(props.isTablet);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if ( nextProps.isTablet !== this.props.isTablet ) {
+            this.style = getStyle(nextProps.isTablet);
+        }
     }
 
     componentDidMount() {
@@ -563,7 +614,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                 />
 
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>
+                    <Text style={[this.style.addPrinterWizardHeaderText, {width: this.props.isTablet ? 450 : '100%'}]}>
                         Informações da impressora
                     </Text>
 
@@ -580,7 +631,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                                 }}
                             />
 
-                            <Text style={[styles.addPrinterWizardHeaderText, {fontSize: 18, width: null, marginTop: 20}]}>Tamanho da Bobina</Text>
+                            <Text style={[this.style.addPrinterWizardHeaderText, {fontSize: 18, width: null, marginTop: 20}]}>Tamanho da Bobina</Text>
 
                             <View style={{maxWidth: 500, height: 60, marginTop: 5, flexDirection: 'row'}}>
                                 <CheckBox
@@ -621,7 +672,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                                 />
                             </View>
 
-                            <Text style={[styles.addPrinterWizardHeaderText, {fontSize: 18, width: null, marginTop: 20}]}>Local da impressora</Text>
+                            <Text style={[this.style.addPrinterWizardHeaderText, {fontSize: 18, width: null, marginTop: 20}]}>Local da impressora</Text>
 
                             <CheckBox
                                 center
@@ -640,7 +691,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                                 }}
                             />
 
-                            <Text style={[styles.addPrinterWizardHeaderText, {fontSize: 18, width: null, marginTop: 20}]}>Modelo da impressora</Text>
+                            <Text style={[this.style.addPrinterWizardHeaderText, {fontSize: 18, width: null, marginTop: 20}]}>Modelo da impressora</Text>
 
                             <CheckBox
                                 center
@@ -701,7 +752,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
         return (
             <View style={{width: '100%', height: '100%'}}>
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>Adicionando a impressora...</Text>
+                    <Text style={[this.style.addPrinterWizardHeaderText, {width: this.props.isTablet ? 450 : '100%'}]}>Adicionando a impressora...</Text>
 
                     <ActivityIndicator size={Platform.OS == 'ios' ? 'large' : 100} color="#3D6889" style={{marginTop: 50}} />
                 </View>
@@ -713,11 +764,11 @@ class PrinterAddWizardPrinterInformationBase extends Component {
         return (
             <View style={{width: '100%', height: '100%'}}>
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center', marginTop: 70}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: isTablet ? 450 : '100%'}]}>Impressora salva com sucesso! Vamos testar?</Text>
+                    <Text style={[this.style.addPrinterWizardHeaderText, {width: this.props.isTablet ? 450 : '100%'}]}>Impressora salva com sucesso! Vamos testar?</Text>
 
                     <Button
-                        containerStyle={styles.addPrinterWizardButton}
-                        buttonStyle={styles.addPrinterWizardButtonInternal}
+                        containerStyle={this.style.addPrinterWizardButton}
+                        buttonStyle={this.style.addPrinterWizardButtonInternal}
                         iconRight
                         icon={{
                             name: 'arrow-right',
@@ -728,7 +779,7 @@ class PrinterAddWizardPrinterInformationBase extends Component {
                         title={
                             "Vamos lá!"
                         }
-                        titleStyle={styles.addPrinterWizardButtonTitle}
+                        titleStyle={this.style.addPrinterWizardButtonTitle}
                         onPress={() => {
                             const printerType = this.props.navigation.getParam('type');
                             const printerId = this.props.navigation.getParam('id');
@@ -803,10 +854,22 @@ const RootStack = createSwitchNavigator({
 });
 
 class PrinterAddWizard extends Component {
+    constructor(props) {
+        super(props);
+
+        this.style = getStyle(props.isTablet);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if ( nextProps.isTablet !== this.props.isTablet ) {
+            this.style = getStyle(nextProps.isTablet);
+        }
+    }
+
     render() {
         return (
-            <View style={styles.addPrintWizardContainer}>
-                <View style={styles.addPrintWizardModal}>
+            <View style={this.style.addPrintWizardContainer}>
+                <View style={this.style.addPrintWizardModal}>
                     <RootStack/>
                 </View>
             </View>

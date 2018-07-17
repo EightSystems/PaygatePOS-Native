@@ -6,13 +6,9 @@ import {Header as ElementHeader} from 'react-native-elements';
 
 import { createDrawerNavigator, createStackNavigator, createSwitchNavigator, DrawerActions, SafeAreaView, NavigationActions } from 'react-navigation';
 
-import { isTablet } from 'react-native-device-detection';
-
 import DrawerNavigatorItems from '../../GeneralUI/DrawerNavigatorItems';
 
 import { Icon } from 'react-native-elements';
-
-import styles from '../styles';
 
 import ReportScreen from '../ReportScreen';
 import VendingScreen from '../VendingScreen';
@@ -39,48 +35,62 @@ const screenList = {
 }
 const initialScreen = 'Vending';
 
-var RootStack;
-if ( ! isTablet ) {
-    const DrawerStack = createDrawerNavigator(screenList, {
-        drawerWidth: 70,
-        contentComponent: (props) => {
-            return (
-                <ScrollView alwaysBounceVertical={false}>
-                    <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
-                        <DrawerNavigatorItems {...props} activeBackgroundColor={'transparent'} iconContainerStyle={{
-                                marginBottom: 16,
-                                marginTop: 16
-                            }}/>
-                    </SafeAreaView>
-                </ScrollView>
-            )
-        }
-    });
+var wasTablet = -1;
+var cacheRootStack;
 
-    RootStack = createStackNavigator({
-        Drawer: {
-            screen: DrawerStack,
-            navigationOptions: ({navigation}) => {
-                const {state} = navigation;
+const getRootStack = (isTablet, initialScreen) => {
+    if ( isTablet === wasTablet ) {
+        return cacheRootStack;
+    }
 
-                if (state.routes[ state.index ].key !== 'DrawerClose') {
-                    return {
-                        headerStyle: {backgroundColor: 'white'},
-                        headerLeft: (<Icon name="bars" type="font-awesome" containerStyle={{marginLeft: 5}} onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} size={30}/>),
+    if ( ! isTablet ) {
+        const DrawerStack = createDrawerNavigator(screenList, {
+            drawerWidth: 70,
+            contentComponent: (props) => {
+                return (
+                    <ScrollView alwaysBounceVertical={false}>
+                        <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
+                            <DrawerNavigatorItems {...props} activeBackgroundColor={'transparent'} iconContainerStyle={{
+                                    marginBottom: 16,
+                                    marginTop: 16
+                                }}/>
+                        </SafeAreaView>
+                    </ScrollView>
+                )
+            },
+            initialRouteName: initialScreen
+        });
+
+        cacheRootStack = createStackNavigator({
+            Drawer: {
+                screen: DrawerStack,
+                navigationOptions: ({navigation}) => {
+                    const {state} = navigation;
+
+                    if (state.routes[ state.index ].key !== 'DrawerClose') {
+                        return {
+                            headerStyle: {backgroundColor: 'white'},
+                            headerLeft: (<Icon name="bars" type="font-awesome" containerStyle={{marginLeft: 5}} onPress={() => navigation.dispatch(DrawerActions.toggleDrawer())} size={30}/>),
+                        }
+                    }
+                    else {
+                        return null;
                     }
                 }
-                else {
-                    return null;
-                }
             }
-        }
-    }, {
-        headerMode: 'screen',
-        mode: Platform.OS === 'ios' ? 'modal' : 'card'
-    });
-}
-else {
-    RootStack = createSwitchNavigator(screenList);
+        }, {
+            headerMode: 'screen',
+            mode: Platform.OS === 'ios' ? 'modal' : 'card'
+        });
+    }
+    else {
+        cacheRootStack = createSwitchNavigator(screenList, {
+            initialRouteName: initialScreen
+        });
+    }
+
+    wasTablet = isTablet;
+    return cacheRootStack;
 }
 
 class Base extends Component {
@@ -94,6 +104,8 @@ class Base extends Component {
     static navigatorRef = null;
 
     renderTablet() {
+        const RootStack = getRootStack(this.props.isTablet, this.state.currentPage);
+
         return (
             <View style={{width: '100%', height: '100%'}}>
                 <ElementHeader
@@ -179,17 +191,30 @@ class Base extends Component {
     }
 
     renderMobile() {
-        return <RootStack />;
+        const RootStack = getRootStack(this.props.isTablet, this.state.currentPage);
+
+        return (
+            <RootStack
+                onNavigationStateChange={(prevState, currentState) => {
+                    if ( prevState.index !== currentState.index ) {
+                        this.setState({
+                            currentPage: currentState.routes[currentState.index].routeName
+                        })
+                    }
+                }}
+            />
+        );
     }
 
     render() {
-        return isTablet ? this.renderTablet() : this.renderMobile();
+        return this.props.isTablet ? this.renderTablet() : this.renderMobile();
     }
 }
 
 mapStateToProps = (state) => {
     return {
-        user: state.userReducer.user
+        user: state.userReducer.user,
+        isTablet:  state.windowReducer.isTablet
     }
 }
 

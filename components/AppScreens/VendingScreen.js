@@ -4,20 +4,30 @@ import { connect } from 'react-redux';
 
 import { View, Text, Image, StyleSheet, FlatList, Dimensions, Platform, TouchableOpacity, TouchableNativeFeedback } from 'react-native';
 
-import { isTablet } from 'react-native-device-detection';
-
 import { Icon } from 'react-native-elements';
 
-import styles from './styles';
+import getStyle from './styles';
 
 class VendingIcon extends PureComponent {
+    constructor(props) {
+        super(props);
+
+        this.style = getStyle(props.isTablet);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if ( nextProps.isTablet !== this.props.isTablet ) {
+            this.style = getStyle(nextProps.isTablet);
+        }
+    }
+
     render() {
         return (
-            <TouchableOpacity style={this.props.isOpen ? [styles.vendingIconItem, styles.vendingIconItemActive] : (
-                    this.props.isPendingCommand ? [styles.vendingIconItem, styles.vendingIconItemCommandSent] : styles.vendingIconItem
+            <TouchableOpacity style={this.props.isOpen ? [this.style.vendingIconItem, this.style.vendingIconItemActive] : (
+                    this.props.isPendingCommand ? [this.style.vendingIconItem, this.style.vendingIconItemCommandSent] : this.style.vendingIconItem
                 )
             } {...this.props}>
-                <Text style={this.props.isOpen ? [styles.vendingIconFont, styles.vendingIconFontActive] : styles.vendingIconFont}>{this.props.title}</Text>
+                <Text style={this.props.isOpen ? [this.style.vendingIconFont, this.style.vendingIconFontActive] : this.style.vendingIconFont}>{this.props.title}</Text>
             </TouchableOpacity>
         )
     }
@@ -37,11 +47,21 @@ class VendingScreen extends Component {
     constructor(props) {
         super(props);
 
-        const {width, height} = Dimensions.get('window');
-        this.columnNumber = isTablet ? Math.floor((width - 70) / 130) : Math.floor(width / 130);
-        this.listWidth = isTablet ? width - 70 : width;
+        this.state = {
+            columnNumber: props.isTablet ? Math.floor((props.width - 70) / 130) : Math.floor(props.width / 130),
+            listWidth: props.isTablet ? props.width - 70 : props.width
+        }
 
         this.tableList = Array.apply(null, Array(10)).map((x, i) => i+1);
+    }
+
+    componentDidUpdate(prevProps) {
+        if ( prevProps.width !== this.props.width || prevProps.isTablet !== this.props.isTablet ) {
+            this.setState({
+                columnNumber: this.props.isTablet ? Math.floor((this.props.width - 70) / 130) : Math.floor(this.props.width / 130),
+                listWidth: this.props.isTablet ? this.props.width - 70 : this.props.width
+            });
+        }
     }
 
     vendingIconPress = () => {
@@ -50,13 +70,14 @@ class VendingScreen extends Component {
 
     render() {
         return (
-            <View style={{width: this.listWidth, height: '100%', alignItems: 'center', justifyContent: 'center', backgroundColor: '#242424' }}>
+            <View style={{width: this.state.listWidth, height: '100%', alignItems: 'center', justifyContent: 'center', backgroundColor: '#242424' }}>
                 <FlatList horizontal={false}
-                    style={{width: this.listWidth, height: '100%'}}
+                    style={{width: this.state.listWidth, height: '100%'}}
                     contentContainerStyle={{alignItems: 'center'}}
                     data={this.tableList}
-                    keyExtractor={(item, index) =>  `table-${item}`}
-                    numColumns={this.columnNumber}
+                    keyExtractor={(item, index) =>  `${this.state.columnNumber}-table-${item}`}
+                    key={this.state.columnNumber}
+                    numColumns={this.state.columnNumber}
                     showsVerticalScrollIndicator={false}
                     showsHorizontalScrollIndicator={false}
                     renderItem={({item}) => {
@@ -75,7 +96,9 @@ class VendingScreen extends Component {
 
 mapStateToProps = (state) => {
     return {
-        user: state.userReducer.user
+        user: state.userReducer.user,
+        width: state.windowReducer.window.width,
+        isTablet: state.windowReducer.isTablet
     }
 }
 

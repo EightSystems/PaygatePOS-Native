@@ -21,7 +21,7 @@ const {
 } = createOffline({
     ...offlineConfig,
     persistOptions: {
-        blacklist: ['userLoginReducer']
+        blacklist: ['userLoginReducer', 'windowReducer']
     }
 });
 

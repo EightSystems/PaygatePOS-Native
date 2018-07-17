@@ -1,15 +1,14 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import { Text, View, FlatList, Dimensions, Alert, Platform } from 'react-native'
+import { Text, View, FlatList, Alert, Platform } from 'react-native'
 import { Icon, ListItem } from 'react-native-elements';
-import { isTablet } from 'react-native-device-detection';
 
 import {printerWizard, deletePrinterAction, editPrinterAction} from '../Utils/Redux/Actions/printer';
 
 import PrinterAddWizard, {ProfileGoBack, PrinterAddWizardSelectType} from './PrinterScreenComponents/PrinterAddWizard';
 
-import styles from './styles';
+import getStyle from './styles';
 
 class PrinterScreen extends Component {
     static navigationOptions = {
@@ -24,8 +23,24 @@ class PrinterScreen extends Component {
     constructor(props) {
         super(props);
 
-        const {width, height} = Dimensions.get('window');
-        this.listWidth = isTablet ? width - 70 : width;
+        this.state = {
+            listWidth: props.isTablet ? props.width - 70 : props.width
+        };
+        this.style = getStyle(props.isTablet);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if ( nextProps.isTablet !== this.props.isTablet ) {
+            this.style = getStyle(nextProps.isTablet);
+        }
+    }
+
+    componentDidUpdate(prevProps) {
+        if ( prevProps.width !== this.props.width || prevProps.isTablet !== this.props.isTablet ) {
+            this.setState({
+                listWidth: this.props.isTablet ? this.props.width - 70 : this.props.width
+            });
+        }
     }
 
     renderWizard = () => {
@@ -54,7 +69,7 @@ class PrinterScreen extends Component {
                     }}
                 />
                 <View style={{width:'100%', alignItems: 'center', justifyContent: 'center'}}>
-                    <Text style={[styles.addPrinterWizardHeaderText, {width: 450}]}>Aqui esta sua lista de dispositivos</Text>
+                    <Text style={[this.style.addPrinterWizardHeaderText, {width: 450}]}>Aqui esta sua lista de dispositivos</Text>
                     <FlatList
                         style={{width: 300, height: 300, marginTop: 30}}
                         keyExtractor={(item, index) => item.type}
@@ -93,7 +108,7 @@ class PrinterScreen extends Component {
                                                 }
                                             },
                                             {
-                                                text: 'Nada'
+                                                text: 'Cancelar'
                                             }
                                         ], Platform.OS == "web" ? 'none' : {
                                             cancelable: true
@@ -116,7 +131,7 @@ class PrinterScreen extends Component {
 
     render() {
         return (
-            <View style={{ width: this.listWidth, height: '100%' }}>
+            <View style={{ width: this.state.listWidth, height: '100%' }}>
                 {
                     ! this.props.printerWizard ?
                         this.renderPrinterList() : this.renderWizard()
@@ -130,7 +145,9 @@ mapStateToProps = (state) => {
     return {
         user: state.userReducer.user,
         printerList: state.printerReducer.list,
-        printerWizard: state.printerReducer.wizard
+        printerWizard: state.printerReducer.wizard,
+        isTablet: state.windowReducer.isTablet,
+        width: state.windowReducer.window.width
     }
 }
 
