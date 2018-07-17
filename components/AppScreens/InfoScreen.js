@@ -11,7 +11,7 @@ class InfoScreen extends Component {
             return null;
         },
         drawerIcon: ({tintColor}) => (
-            <Icon name="info-circle" type="font-awesome" size={25}/>
+            <Icon name="info-circle" type="font-awesome" size={25} color={'white'}/>
         ),
         screenProps: {
             title: 'Dashboard'

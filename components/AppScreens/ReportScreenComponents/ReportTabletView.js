@@ -1,6 +1,6 @@
 import React, {PureComponent} from 'react';
 import { View, Text, Image, ScrollView, ActivityIndicator } from 'react-native';
-import { Icon, Card } from 'react-native-elements';
+import { Icon } from 'react-native-elements';
 import { Col, Row, Grid } from 'react-native-easy-grid';
 
 import { connect } from 'react-redux';
@@ -8,7 +8,7 @@ import {listReportsAction, getReportDataAction} from '../../Utils/Redux/Actions/
 
 import ReportTypesList from './ReportTypesList';
 import ReportDataView from './ReportDataView';
-
+import Card from '../../GeneralUI/Card';
 
 class ReportTabletView extends PureComponent {
     renderReportData() {
@@ -34,14 +34,7 @@ class ReportTabletView extends PureComponent {
                 </Col>
                 <Col size={75}>
                     <ScrollView>
-                        <Card title={
-                            (
-                                <View style={{flex: 1, flexDirection: 'row'}}>
-                                    <Icon name={"list-alt"} type="font-awesome"/>
-                                    <Text style={{fontWeight: 'bold', marginLeft: 5}}>Dados do relatório</Text>
-                                </View>
-                            )
-                        }>
+                        <Card icon={"list-alt"} title={"Dados do relatório"}>
                             {
                                 this.props.reportSelected ? (
                                     this.props.reportSelectedLoaded && this.props.reportData ? this.renderReportData() : (

@@ -1,6 +1,8 @@
 import React, {PureComponent} from 'react';
 import { View, Text, Image, ScrollView, ActivityIndicator } from 'react-native';
-import { Icon, Card, ListItem } from 'react-native-elements';
+import { Icon, ListItem } from 'react-native-elements';
+
+import Card from '../../GeneralUI/Card';
 
 import { connect } from 'react-redux';
 
@@ -35,19 +37,15 @@ class ReportTypesList extends PureComponent {
                 {
                     reportTypes.map((sectionId) => {
                         return (
-                            <Card style={this.props.cardStyle} key={sectionId} title={
-                                (
-                                    <View style={{flex: 1, flexDirection: 'row'}}>
-                                        <Icon name={this.props.reportTypes[sectionId].icon} type="font-awesome"/>
-                                        <Text style={{fontWeight: 'bold', marginLeft: 5}}>{this.props.reportTypes[sectionId].title}</Text>
-                                    </View>
-                                )
-                            }>
+                            <Card style={this.props.cardStyle} key={sectionId}
+                                title={this.props.reportTypes[sectionId].title}
+                                icon={this.props.reportTypes[sectionId].icon}
+                            >
                                 {
                                     Object.keys(this.props.reportTypes[sectionId].types).map((reportType) => {
                                         return (
                                             <View key={`${sectionId}-${reportType}`}>
-                                                <Text style={{fontWeight: 'bold', marginTop: 5}}>{reportType == "multi" ? "Relatórios Multiplos:" : "Relatórios em Tabela:"}</Text>
+                                                <Text style={{fontWeight: 'bold', marginTop: 10}}>{reportType == "multi" ? "Relatórios Duplos:" : "Relatórios em Tabela:"}</Text>
 
                                                 {this.renderTypeList(this.props.reportTypes[sectionId].types[reportType], sectionId, reportType)}
                                             </View>

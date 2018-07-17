@@ -1,10 +1,8 @@
 import React, {Component, PureComponent} from 'react';
+import { View, Text, Image, FlatList, TouchableOpacity } from 'react-native';
+import { Icon } from 'react-native-elements';
 
 import { connect } from 'react-redux';
-
-import { View, Text, Image, StyleSheet, FlatList, Dimensions, Platform, TouchableOpacity, TouchableNativeFeedback } from 'react-native';
-
-import { Icon } from 'react-native-elements';
 
 import getStyle from './styles';
 
@@ -39,7 +37,7 @@ class VendingScreen extends Component {
             return null;
         },
         drawerIcon: ({tintColor}) => (
-            <Icon name="home" type="feather" size={25}/>
+            <Icon name="home" type="feather" size={25} color={'white'}/>
         ),
         title: 'Vending'
     };

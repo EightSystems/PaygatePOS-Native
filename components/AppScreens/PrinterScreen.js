@@ -16,7 +16,7 @@ class PrinterScreen extends Component {
             return null;
         },
         drawerIcon: ({tintColor}) => (
-            <Icon name="print" type="font-awesome" size={25}/>
+            <Icon name="print" type="font-awesome" size={25} color={'white'}/>
         )
     };
 

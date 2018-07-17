@@ -13,7 +13,7 @@ class ReportScreen extends Component {
             return null;
         },
         drawerIcon: ({tintColor}) => (
-            <Icon name="list-alt" type="font-awesome" size={25}/>
+            <Icon name="list-alt" type="font-awesome" size={25} color={'white'}/>
         )
     };
 
@@ -44,7 +44,7 @@ class ReportScreen extends Component {
 
     render() {
         return (
-            <View style={this.props.isTablet ? {width: this.props.width - 70} : { flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+            <View style={this.props.style}>
                 {
                     this.props.reportTypes ?
                         this.renderReportTypes() :

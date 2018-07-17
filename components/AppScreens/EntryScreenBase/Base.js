@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 
-import { View, Text, Image, StyleSheet, ScrollView, Platform } from 'react-native';
+import { View, Text, Image, StyleSheet, ScrollView, Platform, ImageBackground } from 'react-native';
 import {Header as ElementHeader} from 'react-native-elements';
 
 import { createDrawerNavigator, createStackNavigator, createSwitchNavigator, DrawerActions, SafeAreaView, NavigationActions } from 'react-navigation';
@@ -19,20 +19,53 @@ const APPBAR_HEIGHT = Platform.OS === 'ios' ? 44 : 56;
 const STATUSBAR_HEIGHT = Platform.OS === 'ios' ? 20 : 0;
 const TITLE_OFFSET = Platform.OS === 'ios' ? 70 : 56;
 
-const screenList = {
-    Vending: {
-        screen: VendingScreen
-    },
-    Report: {
-        screen: ReportScreen
-    },
-    Printer: {
-        screen: PrinterScreen
-    },
-    Info: {
-        screen: InfoScreen
+mapStateToProps = (state) => {
+    return {
+        user: state.userReducer.user,
+        isTablet:  state.windowReducer.isTablet,
+        width: state.windowReducer.window.width,
+        height: state.windowReducer.window.height
     }
 }
+
+getBackgroundComponent = (Component) => {
+    class BackgroundComponent extends React.Component {
+        static navigationOptions = Component.navigationOptions
+
+        render () {
+            return (
+                <ImageBackground
+                    style={{
+                        height: this.props.height - (APPBAR_HEIGHT + STATUSBAR_HEIGHT),
+                        width: this.props.isTablet ? this.props.width - 70 : this.props.width
+                    }} source={require('../../../resources/bg.png')} resizeMode="repeat">
+                    <Component {...this.props} style={{
+                        height: this.props.height - (APPBAR_HEIGHT + STATUSBAR_HEIGHT),
+                        width: this.props.isTablet ? this.props.width - 70 : this.props.width
+                    }}/>
+                </ImageBackground>
+            )
+        }
+    }
+
+    return connect(mapStateToProps)(BackgroundComponent);
+}
+
+const screenList = {
+    Vending: {
+        screen: getBackgroundComponent(VendingScreen)
+    },
+    Report: {
+        screen: getBackgroundComponent(ReportScreen)
+    },
+    Printer: {
+        screen: getBackgroundComponent(PrinterScreen)
+    },
+    Info: {
+        screen: getBackgroundComponent(InfoScreen)
+    }
+}
+
 const initialScreen = 'Vending';
 
 var wasTablet = -1;
@@ -48,7 +81,7 @@ const getRootStack = (isTablet, initialScreen) => {
             drawerWidth: 70,
             contentComponent: (props) => {
                 return (
-                    <ScrollView alwaysBounceVertical={false}>
+                    <ScrollView alwaysBounceVertical={false} style={{backgroundColor: '#11161A'}}>
                         <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
                             <DrawerNavigatorItems {...props} activeBackgroundColor={'transparent'} iconContainerStyle={{
                                     marginBottom: 16,
@@ -122,7 +155,7 @@ class Base extends Component {
                 />
 
                 <View style={{flex: 1, flexDirection: 'row'}}>
-                    <View style={{width: 70, backgroundColor: 'white'}}>
+                    <View style={{width: 70, backgroundColor: '#11161A'}}>
                         <ScrollView alwaysBounceVertical={false}>
                             <SafeAreaView forceInset={{ top: 'always', horizontal: 'never' }}>
                                 <DrawerNavigatorItems
@@ -208,13 +241,6 @@ class Base extends Component {
 
     render() {
         return this.props.isTablet ? this.renderTablet() : this.renderMobile();
-    }
-}
-
-mapStateToProps = (state) => {
-    return {
-        user: state.userReducer.user,
-        isTablet:  state.windowReducer.isTablet
     }
 }
 
